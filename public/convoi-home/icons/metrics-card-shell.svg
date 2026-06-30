@@ -1,0 +1,39 @@
+<svg width="400" height="285" viewBox="0 0 400 285" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_iin_135325_73742)">
+<path d="M0 32C0 14.3269 14.3269 0 32 0H368C385.673 0 400 14.3269 400 32V253C400 270.673 385.673 285 368 285H32C14.3269 285 0 270.673 0 253V32Z" fill="url(#paint0_radial_135325_73742)" fill-opacity="0.25"/>
+</g>
+<defs>
+<filter id="filter0_iin_135325_73742" x="0" y="-20" width="400" height="305" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="-20"/>
+<feGaussianBlur stdDeviation="15"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.494673 0 0 0 0 0.494673 0 0 0 0 0.494673 0 0 0 1 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_135325_73742"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="-5"/>
+<feGaussianBlur stdDeviation="5"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.75 0"/>
+<feBlend mode="normal" in2="effect1_innerShadow_135325_73742" result="effect2_innerShadow_135325_73742"/>
+<feTurbulence type="fractalNoise" baseFrequency="1.25 1.25" stitchTiles="stitch" numOctaves="3" result="noise" seed="3178" />
+<feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise" />
+<feComponentTransfer in="alphaNoise" result="coloredNoise1">
+<feFuncA type="discrete" tableValues="0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
+</feComponentTransfer>
+<feComposite operator="in" in2="effect2_innerShadow_135325_73742" in="coloredNoise1" result="noise1Clipped" />
+<feFlood flood-color="rgba(0, 0, 0, 0.2)" result="color1Flood" />
+<feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1" />
+<feMerge result="effect3_noise_135325_73742">
+<feMergeNode in="effect2_innerShadow_135325_73742" />
+<feMergeNode in="color1" />
+</feMerge>
+</filter>
+<radialGradient id="paint0_radial_135325_73742" cx="0" cy="0" r="1" gradientTransform="matrix(195.429 -275.502 264.901 203.25 151.677 275.502)" gradientUnits="userSpaceOnUse">
+<stop offset="0.772459" stop-color="#111111"/>
+<stop offset="1" stop-color="#111111"/>
+</radialGradient>
+</defs>
+</svg>
