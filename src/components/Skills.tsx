@@ -9,7 +9,7 @@ export function Skills() {
         aria-hidden
         className="pointer-events-none absolute -right-28 bottom-12 h-80 w-80 rounded-full bg-accent-3 opacity-[0.07] blur-3xl"
       />
-      <div className="relative mx-auto max-w-6xl px-5 py-24 sm:px-6 sm:py-28">
+      <div className="relative mx-auto max-w-6xl px-5 py-20 sm:px-6 sm:py-24">
         <Reveal>
           <SectionLabel>Skills</SectionLabel>
         </Reveal>

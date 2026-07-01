@@ -6,20 +6,6 @@
  * so your editor will warn you if a field is missing.
  */
 
-export type Project = {
-  title: string;
-  description: string;
-  /** Short tags shown as chips, e.g. ["Next.js", "FastAPI"]. */
-  tags: string[];
-  /** Optional external link (live site, repo, case study). Omit to hide the link. */
-  href?: string;
-  /**
-   * Optional thumbnail. Drop the file in `public/projects/` and reference it as
-   * "/projects/my-shot.jpg". If omitted, a branded gradient placeholder is shown.
-   */
-  image?: string;
-};
-
 export type SkillGroup = {
   category: string;
   items: string[];
@@ -44,19 +30,28 @@ export type ExperienceItem = {
   /** e.g. "2024 to Present" (kept dash-free). */
   period: string;
   description: string;
+  /** Optional company logo path in /public (e.g. "/companies/acme.svg"). Falls back to a monogram. */
+  logo?: string;
+};
+
+export type EducationItem = {
+  school: string;
+  degree: string;
+  period: string;
 };
 
 export const profile = {
   /** Shown in the header, hero, and browser tab. */
   name: "Taimur Khalid",
   /** Your role / title, shown in the hero and header. */
-  role: "AI Voice & Full-Stack Developer",
+  role: "Full-Stack Engineer · Voice AI Developer",
   /** One punchy line for the hero. */
-  tagline: "I build AI voice agents and full-stack web apps.",
+  tagline: "I build voice AI agents that hold real conversations.",
   /** A short paragraph or two for the About section. */
   about: [
-    "Hi, I'm Taimur Khalid, a developer who enjoys taking ideas from a rough concept all the way to a polished, shipped product.",
-    "I work across the full stack, from Python and FastAPI backends to Next.js frontends, with a focus on AI voice agents. I care most about clear thinking, clean execution, and software that actually helps people. When I'm not building, you'll find me exploring new tools and side projects.",
+    "I'm a Full-Stack Software Engineer at Convoi AI, where I build voice AI agents that hold real conversations. My work spans the full pipeline: training and tuning LLM-based conversational agents, integrating Speech-to-Text and Text-to-Speech systems, and building real-time voice infrastructure with LiveKit.",
+    "On the product side I build backend services with Python and FastAPI and frontends with Next.js, working directly with clients to turn their requirements into production-ready deployments. I care about what actually makes voice AI work in production: low latency, grounding so the agent never invents a price or fact, natural dialect handling, and tool calling that holds up in front of real customers.",
+    "Right now I'm exploring multi-agent orchestration, evaluation frameworks for voice AI, and techniques for building more reliable, scalable conversational systems.",
   ],
   /** Used for the \"Get in touch\" button and footer. */
   email: "taimurkhalid3@gmail.com",
@@ -79,29 +74,6 @@ export const socials: SocialLink[] = [
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/taimur-khalid-41a259292",
-  },
-];
-
-export const projects: Project[] = [
-  {
-    title: "Project One",
-    description:
-      "A short description of what this project is, the problem it solved, and your role in it. Keep it to a sentence or two.",
-    tags: ["Next.js", "TypeScript", "FastAPI"],
-    href: "https://example.com",
-  },
-  {
-    title: "Project Two",
-    description:
-      "Another piece of work you're proud of. Mention the outcome or impact where you can. Numbers and results stand out.",
-    tags: ["Python", "LiveKit", "AI Voice"],
-    href: "https://example.com",
-  },
-  {
-    title: "Project Three",
-    description:
-      "Replace these placeholders with your real projects. Add or remove cards freely. The grid adapts automatically.",
-    tags: ["React", "WebSockets"],
   },
 ];
 
@@ -128,12 +100,13 @@ export const techStack: string[] = [
   // Common industry tools
   "React",
   "Node.js",
+  "Express.js",
   "REST APIs",
   "WebSockets",
   "Tailwind CSS",
   "SQL",
   "PostgreSQL",
-  "Docker",
+  "AWS EC2",
   "Git",
   "GitHub",
   "Claude Code",
@@ -150,7 +123,14 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     category: "Backend & APIs",
-    items: ["FastAPI", "Node.js", "REST APIs", "WebSockets", "PostgreSQL"],
+    items: [
+      "FastAPI",
+      "Node.js",
+      "Express.js",
+      "REST APIs",
+      "WebSockets",
+      "PostgreSQL",
+    ],
   },
   {
     category: "AI / Voice",
@@ -160,11 +140,13 @@ export const skillGroups: SkillGroup[] = [
       "LLM Integration",
       "STT (Speech to Text)",
       "TTS (Text to Speech)",
+      "Prompt Engineering",
+      "Conversational AI",
     ],
   },
   {
     category: "DevOps & Tools",
-    items: ["Vercel", "Docker", "Git", "GitHub", "Claude Code", "Sentry"],
+    items: ["Vercel", "AWS EC2", "SSH", "Git", "GitHub", "Claude Code", "Sentry"],
   },
 ];
 
@@ -174,7 +156,7 @@ export const skillGroups: SkillGroup[] = [
  */
 export const stats: Stat[] = [
   { value: 2, suffix: "+", label: "Years Experience" },
-  { value: 10, suffix: "+", label: "Projects Built" },
+  { value: 3, suffix: "+", label: "Enterprise Clients" },
   { value: 20, suffix: "+", label: "Technologies" },
   { value: 100, suffix: "%", label: "Commitment" },
 ];
@@ -185,10 +167,33 @@ export const stats: Stat[] = [
  */
 export const experience: ExperienceItem[] = [
   {
-    role: "AI Voice & Full-Stack Developer",
-    company: "Company Name",
-    period: "2024 to Present",
+    role: "Software Engineer",
+    company: "Convoi AI",
+    logo: "/companies/convoi.svg",
+    period: "Aug 2025 to Present",
     description:
-      "Building production AI voice agents with LiveKit and Twilio SIP trunking, wiring LLMs to real-time STT/TTS, and shipping full-stack features across FastAPI backends and Next.js frontends.",
+      "Building full-stack voice AI systems with Next.js frontends and Python/FastAPI backends. I develop LLM-based conversational agents with real-time Speech-to-Text and Text-to-Speech pipelines, and live voice infrastructure on LiveKit for streaming, turn-taking, and orchestration. Shipped a production voice agent for Invygo, a UAE car rental platform, with multilingual Arabic and English booking and payment flows, and built and demoed agents for enterprise clients including Pepsi (Aquafina) and Dubai healthcare providers.",
+  },
+  {
+    role: "Software Engineer Intern",
+    company: "ETL Online",
+    logo: "/companies/etl.png",
+    period: "Apr 2025 to Jun 2025",
+    description:
+      "Built and maintained Next.js frontend pages for ETL Online's community platform, Pakistan's largest non-profit tech community, and developed Node.js and Express REST APIs powering its features. Contributed to a live product used by 2,300+ members across Pakistan.",
+  },
+];
+
+/** Education, newest first. */
+export const education: EducationItem[] = [
+  {
+    school: "Information Technology University",
+    degree: "BS in Computer Science",
+    period: "2020 to 2024",
+  },
+  {
+    school: "Punjab Group of Colleges",
+    degree: "F.Sc Pre Engineering",
+    period: "2018 to 2020",
   },
 ];

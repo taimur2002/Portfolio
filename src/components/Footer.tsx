@@ -14,7 +14,7 @@ export function Footer() {
         className="pointer-events-none absolute -top-32 left-1/2 -z-10 h-72 w-160 -translate-x-1/2 rounded-full bg-accent opacity-20 blur-[100px]"
       />
 
-      <div className="mx-auto max-w-6xl px-5 py-24 sm:px-6 sm:py-28">
+      <div className="mx-auto max-w-6xl px-5 py-20 sm:px-6 sm:py-24">
         <Reveal>
           <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-zinc-400">
             Get in touch

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
 import { profile } from "@/data/portfolio";
 import { GradientText } from "@/components/GradientText";
@@ -102,7 +103,22 @@ export function Hero() {
           look around at what I&apos;ve been building.
         </motion.p>
 
-        <motion.div variants={item} className="mt-10 flex flex-wrap gap-4">
+        <motion.div variants={item} className="mt-6">
+          <span className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white/70 px-3.5 py-1.5 text-sm text-zinc-600 backdrop-blur">
+            <Image
+              src="/companies/convoi.svg"
+              alt="Convoi AI"
+              width={14}
+              height={20}
+              unoptimized
+              className="h-4 w-auto"
+            />
+            Currently at{" "}
+            <span className="font-semibold text-zinc-900">Convoi AI</span>
+          </span>
+        </motion.div>
+
+        <motion.div variants={item} className="mt-8 flex flex-wrap gap-4">
           <a
             href="#projects"
             className="group inline-flex items-center gap-2 rounded-full bg-zinc-950 px-7 py-3.5 text-sm font-medium text-white shadow-lg shadow-zinc-900/10 transition-all hover:-translate-y-0.5 hover:shadow-xl"

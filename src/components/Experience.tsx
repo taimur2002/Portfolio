@@ -1,11 +1,12 @@
 import { experience } from "@/data/portfolio";
 import { Reveal } from "@/components/motion/Reveal";
 import { SectionLabel } from "@/components/SectionLabel";
+import { CompanyLogo } from "@/components/CompanyLogo";
 
 export function Experience() {
   return (
     <section id="experience" className="scroll-mt-20">
-      <div className="mx-auto max-w-6xl px-5 py-24 sm:px-6 sm:py-28">
+      <div className="mx-auto max-w-6xl px-5 py-20 sm:px-6 sm:py-24">
         <Reveal>
           <SectionLabel>Experience</SectionLabel>
         </Reveal>
@@ -21,10 +22,10 @@ export function Experience() {
             return (
               <Reveal key={`${item.company}-${i}`} delay={i * 0.08}>
                 <div className="flex gap-5">
-                  {/* Marker + connector line */}
-                  <div className="flex flex-col items-center pt-1.5">
-                    <span className="h-3.5 w-3.5 shrink-0 rounded-full bg-accent ring-4 ring-[#f2faf6]" />
-                    {!last && <span className="mt-2 w-px flex-1 bg-zinc-200" />}
+                  {/* Company logo marker + connector line */}
+                  <div className="flex flex-col items-center">
+                    <CompanyLogo name={item.company} logo={item.logo} />
+                    {!last && <span className="mt-3 w-px flex-1 bg-zinc-200" />}
                   </div>
                   {/* Content */}
                   <div className={last ? "" : "pb-10"}>
