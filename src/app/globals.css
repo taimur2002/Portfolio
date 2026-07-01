@@ -83,8 +83,9 @@ body {
 }
 
 ::selection {
-  background-color: var(--color-accent);
-  color: #ffffff;
+  /* Subtle on-brand tint (not a heavy solid block); text keeps its own color. */
+  background-color: color-mix(in srgb, var(--color-accent) 22%, transparent);
+  color: inherit;
 }
 
 @media (prefers-reduced-motion: reduce) {

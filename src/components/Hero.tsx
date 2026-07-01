@@ -30,7 +30,7 @@ export function Hero() {
           style={{ width: 440, height: 440, top: -120, left: -80 }}
         />
         <div
-          className="absolute animate-blob rounded-full bg-accent-3 opacity-40 blur-3xl"
+          className="absolute animate-blob rounded-full bg-accent-3 opacity-30 blur-3xl"
           style={{
             width: 380,
             height: 380,
@@ -79,7 +79,7 @@ export function Hero() {
 
         <motion.p
           variants={item}
-          className="mt-8 font-display text-xs font-semibold uppercase tracking-[0.15em] text-zinc-500 sm:text-sm sm:tracking-[0.2em]"
+          className="mt-8 font-display text-xs font-semibold uppercase tracking-[0.15em] text-zinc-600 sm:text-sm sm:tracking-[0.2em]"
         >
           {profile.role}
         </motion.p>

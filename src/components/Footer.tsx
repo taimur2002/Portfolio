@@ -15,7 +15,7 @@ export function Footer() {
 
       <div className="mx-auto max-w-6xl px-5 py-24 sm:px-6 sm:py-28">
         <Reveal>
-          <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
+          <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-zinc-400">
             Get in touch
           </p>
         </Reveal>
@@ -25,7 +25,7 @@ export function Footer() {
           </h2>
         </Reveal>
         <Reveal delay={0.1}>
-          <p className="mt-6 max-w-xl text-lg text-zinc-400">
+          <p className="mt-6 max-w-xl text-lg text-zinc-300">
             Have a project in mind, or just want to say hi? My inbox is always
             open.
           </p>
@@ -46,7 +46,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-8 text-sm text-zinc-500 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-8 text-sm text-zinc-400 sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <p>
             © {year} {profile.name}
             {profile.location ? ` · ${profile.location}` : ""}

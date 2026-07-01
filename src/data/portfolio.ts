@@ -64,8 +64,12 @@ export const profile = {
   resumeUrl: "",
   /** Footer location line (optional). */
   location: "Lahore, Pakistan",
-  /** Your live site URL, used for SEO (sitemap, robots, social share links). */
-  url: "https://yourdomain.com",
+  /**
+   * Your live site URL, used for SEO + social share previews.
+   * Set this to your real domain (e.g. "https://taimur.vercel.app"). While it's
+   * left as the placeholder, the site auto-detects your Vercel domain on deploy.
+   */
+  url: "https://portfolio-taimur.vercel.app",
 };
 
 export const socials: SocialLink[] = [

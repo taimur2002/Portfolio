@@ -18,7 +18,7 @@ function Row({ items, reverse = false }: { items: string[]; reverse?: boolean })
   const doubled = [...items, ...items];
   return (
     <div
-      className={`flex w-max animate-marquee hover:[animation-play-state:paused] ${
+      className={`flex w-max animate-marquee will-change-transform hover:[animation-play-state:paused] ${
         reverse ? "[animation-direction:reverse]" : ""
       }`}
     >

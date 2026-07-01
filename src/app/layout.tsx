@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
 import { profile } from "@/data/portfolio";
+import { siteUrl } from "@/lib/site-url";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(profile.url),
+  metadataBase: new URL(siteUrl),
   title: {
     default: `${profile.name} · Portfolio`,
     template: `%s · ${profile.name}`,
