@@ -51,7 +51,7 @@ export function Header() {
           : "border-b border-transparent bg-white/0"
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-5 sm:px-6">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-6">
         <a
           href="#top"
           onClick={() => setOpen(false)}
@@ -117,7 +117,7 @@ export function Header() {
             transition={{ duration: 0.28, ease: EASE }}
             className="overflow-hidden border-b border-zinc-200 bg-white/95 backdrop-blur-md sm:hidden"
           >
-            <div className="mx-auto flex max-w-5xl flex-col gap-1 px-5 py-3">
+            <div className="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-3">
               {navLinks.map((link) => (
                 <a
                   key={link.href}

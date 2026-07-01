@@ -18,6 +18,7 @@
   --color-accent-3: #06b6d4;
 
   --animate-blob: blob 16s ease-in-out infinite;
+  --animate-marquee: marquee 36s linear infinite;
 
   @keyframes blob {
     0%,
@@ -31,6 +32,16 @@
       transform: translate(-28px, 26px) scale(0.92);
     }
   }
+
+  /* Seamless ticker: track holds two identical copies; -50% lands on the 2nd. */
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 :root {
@@ -40,6 +51,7 @@
 html {
   /* Fallback offset for in-page anchors when JS/Lenis is unavailable. */
   scroll-padding-top: 5rem;
+  background-color: #f4f7fc;
 }
 
 /* Lenis smooth-scroll base styles (https://lenis.darkroom.engineering). */
@@ -61,7 +73,7 @@ html.lenis body {
 }
 
 body {
-  background-color: #ffffff;
+  background-color: #f4f7fc;
   color: #0a0a0a;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
@@ -79,7 +91,8 @@ body {
   html {
     scroll-behavior: auto;
   }
-  .animate-blob {
+  .animate-blob,
+  .animate-marquee {
     animation: none;
   }
 }

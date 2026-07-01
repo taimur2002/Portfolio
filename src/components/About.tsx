@@ -4,8 +4,12 @@ import { SectionLabel } from "@/components/SectionLabel";
 
 export function About() {
   return (
-    <section id="about" className="scroll-mt-20">
-      <div className="mx-auto max-w-5xl px-5 py-24 sm:px-6 sm:py-28">
+    <section id="about" className="relative overflow-hidden scroll-mt-20">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -left-28 top-1/4 h-80 w-80 rounded-full bg-accent opacity-[0.07] blur-3xl"
+      />
+      <div className="relative mx-auto max-w-6xl px-5 py-24 sm:px-6 sm:py-28">
         <Reveal>
           <SectionLabel>About</SectionLabel>
         </Reveal>

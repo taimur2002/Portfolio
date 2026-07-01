@@ -65,7 +65,7 @@ export function Hero() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="mx-auto flex min-h-[88vh] max-w-5xl flex-col justify-center px-5 py-20 sm:px-6"
+        className="mx-auto flex min-h-[88vh] max-w-6xl flex-col justify-center px-5 py-20 sm:px-6"
       >
         <motion.div variants={item}>
           <span className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white/70 px-4 py-1.5 text-sm font-medium text-zinc-700 backdrop-blur">
@@ -98,7 +98,7 @@ export function Hero() {
           variants={item}
           className="mt-7 max-w-2xl text-lg leading-relaxed text-zinc-600 sm:text-xl"
         >
-          Hi, I&apos;m {profile.name}. Welcome to my corner of the web — take a
+          Hi, I&apos;m {profile.name}. Welcome to my corner of the web. Take a
           look around at what I&apos;ve been building.
         </motion.p>
 

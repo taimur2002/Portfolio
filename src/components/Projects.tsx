@@ -5,8 +5,8 @@ import { SectionLabel } from "@/components/SectionLabel";
 
 export function Projects() {
   return (
-    <section id="projects" className="scroll-mt-20 bg-zinc-50/80">
-      <div className="mx-auto max-w-5xl px-5 py-24 sm:px-6 sm:py-28">
+    <section id="projects" className="scroll-mt-20 bg-[#e9eff9]">
+      <div className="mx-auto max-w-6xl px-5 py-24 sm:px-6 sm:py-28">
         <Reveal>
           <SectionLabel>Work</SectionLabel>
         </Reveal>

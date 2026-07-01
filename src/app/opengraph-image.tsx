@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { profile } from "@/data/portfolio";
 
 // Route segment config
-export const alt = `${profile.name} — Portfolio`;
+export const alt = `${profile.name} · Portfolio`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

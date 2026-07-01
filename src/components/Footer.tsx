@@ -13,7 +13,7 @@ export function Footer() {
         className="pointer-events-none absolute -top-32 left-1/2 -z-10 h-72 w-160 -translate-x-1/2 rounded-full bg-accent opacity-20 blur-[100px]"
       />
 
-      <div className="mx-auto max-w-5xl px-5 py-24 sm:px-6 sm:py-28">
+      <div className="mx-auto max-w-6xl px-5 py-24 sm:px-6 sm:py-28">
         <Reveal>
           <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
             Get in touch
@@ -46,7 +46,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-5xl flex-col gap-4 px-5 py-8 text-sm text-zinc-500 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-8 text-sm text-zinc-500 sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <p>
             © {year} {profile.name}
             {profile.location ? ` · ${profile.location}` : ""}
