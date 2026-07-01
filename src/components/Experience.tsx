@@ -23,7 +23,7 @@ export function Experience() {
                 <div className="flex gap-5">
                   {/* Marker + connector line */}
                   <div className="flex flex-col items-center pt-1.5">
-                    <span className="h-3.5 w-3.5 shrink-0 rounded-full bg-accent ring-4 ring-[#f4f7fc]" />
+                    <span className="h-3.5 w-3.5 shrink-0 rounded-full bg-accent ring-4 ring-[#f2faf6]" />
                     {!last && <span className="mt-2 w-px flex-1 bg-zinc-200" />}
                   </div>
                   {/* Content */}

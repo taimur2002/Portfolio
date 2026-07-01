@@ -1,6 +1,7 @@
 import { profile, socials } from "@/data/portfolio";
 import { Reveal } from "@/components/motion/Reveal";
 import { GradientText } from "@/components/GradientText";
+import { SocialIcon, hasSocialIcon } from "@/components/SocialIcon";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -43,6 +44,16 @@ export function Footer() {
             </span>
           </a>
         </Reveal>
+        {profile.phone && (
+          <Reveal delay={0.2}>
+            <a
+              href={`tel:${profile.phone}`}
+              className="mt-4 inline-block text-base text-zinc-400 transition-colors hover:text-white sm:text-lg"
+            >
+              {profile.phone}
+            </a>
+          </Reveal>
+        )}
       </div>
 
       <div className="border-t border-white/10">
@@ -51,16 +62,21 @@ export function Footer() {
             © {year} {profile.name}
             {profile.location ? ` · ${profile.location}` : ""}
           </p>
-          <ul className="flex flex-wrap gap-6">
+          <ul className="flex flex-wrap items-center gap-5">
             {socials.map((social) => (
               <li key={social.label}>
                 <a
                   href={social.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="transition-colors hover:text-white"
+                  aria-label={social.label}
+                  title={social.label}
+                  className="inline-flex text-zinc-400 transition-all hover:-translate-y-0.5 hover:text-white"
                 >
-                  {social.label}
+                  <SocialIcon label={social.label} />
+                  <span className={hasSocialIcon(social.label) ? "sr-only" : ""}>
+                    {social.label}
+                  </span>
                 </a>
               </li>
             ))}

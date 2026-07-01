@@ -60,6 +60,8 @@ export const profile = {
   ],
   /** Used for the \"Get in touch\" button and footer. */
   email: "taimurkhalid3@gmail.com",
+  /** Phone number shown in the contact section as a tel: link. Leave "" to hide. */
+  phone: "+923054658619",
   /** Optional: path to a CV/resume file placed in /public (e.g. \"/resume.pdf\"). Omit to hide the button. */
   resumeUrl: "",
   /** Footer location line (optional). */
@@ -73,9 +75,11 @@ export const profile = {
 };
 
 export const socials: SocialLink[] = [
-  { label: "GitHub", href: "https://github.com/yourusername" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/yourusername" },
-  { label: "Twitter / X", href: "https://x.com/yourusername" },
+  { label: "GitHub", href: "https://github.com/taimur2002" },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/taimur-khalid-41a259292",
+  },
 ];
 
 export const projects: Project[] = [

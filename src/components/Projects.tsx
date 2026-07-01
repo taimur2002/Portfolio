@@ -5,7 +5,7 @@ import { SectionLabel } from "@/components/SectionLabel";
 
 export function Projects() {
   return (
-    <section id="projects" className="scroll-mt-20 bg-[#e9eff9]">
+    <section id="projects" className="scroll-mt-20 bg-[#e7f4ee]">
       <div className="mx-auto max-w-6xl px-5 py-24 sm:px-6 sm:py-28">
         <Reveal>
           <SectionLabel>Work</SectionLabel>
@@ -20,7 +20,7 @@ export function Projects() {
           {projects.map((project, index) => {
             const inner = (
               /* 1px wrapper turns into a gradient border on hover */
-              <div className="relative h-full rounded-2xl bg-zinc-200 p-px transition-all duration-300 group-hover:-translate-y-1 group-hover:bg-linear-to-br group-hover:from-accent group-hover:to-accent-3 group-hover:shadow-[0_24px_50px_-24px_rgba(37,99,235,0.5)]">
+              <div className="relative h-full rounded-2xl bg-zinc-200 p-px transition-all duration-300 group-hover:-translate-y-1 group-hover:bg-linear-to-br group-hover:from-accent group-hover:to-accent-3 group-hover:shadow-[0_24px_50px_-24px_rgba(16,185,129,0.5)]">
                 <article className="flex h-full flex-col overflow-hidden rounded-[15px] bg-white">
                   {/* Image / branded placeholder */}
                   <div className="relative aspect-16/10 w-full overflow-hidden border-b border-zinc-100">

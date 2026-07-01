@@ -29,7 +29,7 @@ export default function OpengraphImage() {
               width: 56,
               height: 56,
               borderRadius: 14,
-              background: "linear-gradient(135deg, #2563eb, #06b6d4)",
+              background: "linear-gradient(135deg, #10b981, #06b6d4)",
             }}
           />
           <div style={{ fontSize: 30, fontWeight: 600 }}>{profile.name}</div>
@@ -59,7 +59,7 @@ export default function OpengraphImage() {
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <div style={{ width: 120, height: 6, borderRadius: 999, background: "linear-gradient(90deg, #2563eb, #06b6d4)" }} />
+          <div style={{ width: 120, height: 6, borderRadius: 999, background: "linear-gradient(90deg, #10b981, #06b6d4)" }} />
           <div style={{ fontSize: 24, color: "#a1a1aa" }}>{profile.email}</div>
         </div>
       </div>

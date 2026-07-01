@@ -13,8 +13,8 @@
     Roboto, Helvetica, Arial, sans-serif;
   --font-display: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
 
-  --color-accent: #2563eb;
-  --color-accent-2: #0ea5e9;
+  --color-accent: #10b981;
+  --color-accent-2: #14b8a6;
   --color-accent-3: #06b6d4;
 
   --animate-blob: blob 16s ease-in-out infinite;
@@ -51,7 +51,7 @@
 html {
   /* Fallback offset for in-page anchors when JS/Lenis is unavailable. */
   scroll-padding-top: 5rem;
-  background-color: #f4f7fc;
+  background-color: #f2faf6;
 }
 
 /* Lenis smooth-scroll base styles (https://lenis.darkroom.engineering). */
@@ -73,7 +73,7 @@ html.lenis body {
 }
 
 body {
-  background-color: #f4f7fc;
+  background-color: #f2faf6;
   color: #0a0a0a;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;

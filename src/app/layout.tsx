@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-[#f4f7fc] text-zinc-900">
+      <body className="min-h-screen bg-[#f2faf6] text-zinc-900">
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
