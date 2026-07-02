@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
 import { profile } from "@/data/portfolio";
 import { GradientText } from "@/components/GradientText";
+import { HeroScene } from "@/components/three/HeroScene";
 
 const container: Variants = {
   hidden: {},
@@ -24,14 +25,15 @@ const item: Variants = {
 export function Hero() {
   return (
     <section className="relative isolate overflow-hidden">
-      {/* Animated gradient orbs (effects via utilities; size/position via inline style) */}
+      {/* Soft gradient orbs — a color wash beneath the 3D layer (and the graceful
+          fallback if WebGL is unavailable). */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
         <div
-          className="absolute animate-blob rounded-full bg-accent opacity-40 blur-3xl"
+          className="absolute animate-blob rounded-full bg-accent opacity-25 blur-3xl"
           style={{ width: 440, height: 440, top: -120, left: -80 }}
         />
         <div
-          className="absolute animate-blob rounded-full bg-accent-3 opacity-30 blur-3xl"
+          className="absolute animate-blob rounded-full bg-accent-3 opacity-20 blur-3xl"
           style={{
             width: 380,
             height: 380,
@@ -41,7 +43,7 @@ export function Hero() {
           }}
         />
         <div
-          className="absolute animate-blob rounded-full bg-accent-2 opacity-40 blur-3xl"
+          className="absolute animate-blob rounded-full bg-accent-2 opacity-25 blur-3xl"
           style={{
             width: 320,
             height: 320,
@@ -51,6 +53,10 @@ export function Hero() {
           }}
         />
       </div>
+
+      {/* Interactive three.js particle sphere (edge-faded so it reads as ambient
+          depth behind the copy). */}
+      <HeroScene className="pointer-events-none absolute inset-0 -z-10 mask-[radial-gradient(115%_95%_at_62%_38%,#000_55%,transparent)]" />
       {/* Dotted grid, faded toward the edges */}
       <div
         aria-hidden
