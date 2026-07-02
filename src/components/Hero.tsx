@@ -132,7 +132,7 @@ export function Hero() {
             </span>
           </a>
           <a
-            href={`mailto:${profile.email}`}
+            href="#contact"
             className="inline-flex items-center rounded-full border border-zinc-300 bg-white/60 px-7 py-3.5 text-sm font-medium text-zinc-900 backdrop-blur transition-all hover:-translate-y-0.5 hover:border-zinc-900"
           >
             Get in touch
