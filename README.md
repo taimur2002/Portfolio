@@ -17,9 +17,12 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 It controls everything on the site:
 
-- `profile` — your name, role, tagline, about text, email, and an optional résumé link
-- `socials` — your GitHub / LinkedIn / etc. links
-- `projects` — the cards in the Projects section (add or remove freely)
+- `profile` — your name, role, tagline, about text, email, phone, location, and an optional résumé link
+- `socials` — your GitHub / LinkedIn links (rendered as icons in the footer)
+- `techStack` — the tools shown in the scrolling marquee under the hero
+- `stats` — the animated count-up figures
+- `experience` — your work-history timeline (supports an optional company `logo`)
+- `education` — your education entries
 - `skillGroups` — the grouped skill chips in the Skills section
 
 Save the file and the page updates instantly while `npm run dev` is running.
@@ -30,11 +33,11 @@ Drop a PDF into the `public/` folder (e.g. `public/resume.pdf`) and set
 `resumeUrl: "/resume.pdf"` in `src/data/portfolio.ts`. A download button appears
 automatically in the Skills section.
 
-### Adding project images
+### Company logos
 
-Put image files in `public/projects/` (e.g. `public/projects/my-app.jpg`) and set
-`image: "/projects/my-app.jpg"` on a project. Projects without an `image` show a
-branded gradient placeholder, so it always looks intentional.
+Drop a company logo in `public/companies/` (e.g. `public/companies/acme.svg`) and
+set `logo: "/companies/acme.svg"` on an `experience` entry. Entries without a
+`logo` fall back to a clean monogram of the company name.
 
 ### SEO
 
@@ -50,7 +53,10 @@ src/
     layout.tsx      Root layout + page metadata
     page.tsx        Assembles the sections
     globals.css     Theme tokens + base styles
-  components/       Header, Hero, About, Projects, Skills, Footer
+  components/       Header, Hero, TechMarquee, About, Stats,
+                    Experience, Education, Skills, Footer
+  lib/
+    site-url.ts     Resolves the site URL for SEO/metadata
   data/
     portfolio.ts    ← your content lives here
 ```

@@ -1,5 +1,4 @@
 import { About } from "@/components/About";
-import { Education } from "@/components/Education";
 import { Experience } from "@/components/Experience";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -18,7 +17,6 @@ export default function HomePage() {
         <About />
         <Stats />
         <Experience />
-        <Education />
         <Skills />
       </main>
       <Footer />

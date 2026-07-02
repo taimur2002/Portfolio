@@ -44,9 +44,9 @@ export const profile = {
   /** Shown in the header, hero, and browser tab. */
   name: "Taimur Khalid",
   /** Your role / title, shown in the hero and header. */
-  role: "Full-Stack Engineer · Voice AI Developer",
+  role: "Full-Stack Software Engineer",
   /** One punchy line for the hero. */
-  tagline: "I build voice AI agents that hold real conversations.",
+  tagline: "I build reliable software, from idea to production.",
   /** A short paragraph or two for the About section. */
   about: [
     "I'm a Full-Stack Software Engineer at Convoi AI, where I build voice AI agents that hold real conversations. My work spans the full pipeline: training and tuning LLM-based conversational agents, integrating Speech-to-Text and Text-to-Speech systems, and building real-time voice infrastructure with LiveKit.",
@@ -90,8 +90,8 @@ export const techStack: string[] = [
   "LiveKit",
   "Twilio",
   "LLM",
-  "STT",
-  "TTS",
+  "Speech to Text",
+  "Text to Speech",
   "Vercel",
   "Sentry",
   "JavaScript",
@@ -106,7 +106,6 @@ export const techStack: string[] = [
   "Tailwind CSS",
   "SQL",
   "PostgreSQL",
-  "AWS EC2",
   "Git",
   "GitHub",
   "Claude Code",
@@ -115,7 +114,7 @@ export const techStack: string[] = [
 export const skillGroups: SkillGroup[] = [
   {
     category: "Languages",
-    items: ["Python", "TypeScript", "JavaScript", "SQL"],
+    items: ["Python", "TypeScript", "JavaScript", "C/C++", "SQL"],
   },
   {
     category: "Frontend",
@@ -138,15 +137,15 @@ export const skillGroups: SkillGroup[] = [
       "LiveKit",
       "Twilio",
       "LLM Integration",
-      "STT (Speech to Text)",
-      "TTS (Text to Speech)",
+      "Speech to Text",
+      "Text to Speech",
       "Prompt Engineering",
       "Conversational AI",
     ],
   },
   {
     category: "DevOps & Tools",
-    items: ["Vercel", "AWS EC2", "SSH", "Git", "GitHub", "Claude Code", "Sentry"],
+    items: ["GitHub", "Git", "Sentry", "Cursor", "Claude Code", "Vercel"],
   },
 ];
 
@@ -156,9 +155,9 @@ export const skillGroups: SkillGroup[] = [
  */
 export const stats: Stat[] = [
   { value: 2, suffix: "+", label: "Years Experience" },
-  { value: 3, suffix: "+", label: "Enterprise Clients" },
   { value: 20, suffix: "+", label: "Technologies" },
-  { value: 100, suffix: "%", label: "Commitment" },
+  { value: 50, suffix: "k+", label: "Conversations Handled" },
+  { value: 10, suffix: "k+", label: "Users Served" },
 ];
 
 /**
@@ -172,7 +171,7 @@ export const experience: ExperienceItem[] = [
     logo: "/companies/convoi.svg",
     period: "Aug 2025 to Present",
     description:
-      "Building full-stack voice AI systems with Next.js frontends and Python/FastAPI backends. I develop LLM-based conversational agents with real-time Speech-to-Text and Text-to-Speech pipelines, and live voice infrastructure on LiveKit for streaming, turn-taking, and orchestration. Shipped a production voice agent for Invygo, a UAE car rental platform, with multilingual Arabic and English booking and payment flows, and built and demoed agents for enterprise clients including Pepsi (Aquafina) and Dubai healthcare providers.",
+      "Building full-stack voice AI systems with Next.js frontends and Python/FastAPI backends. I develop LLM-based conversational agents with real-time Speech-to-Text and Text-to-Speech pipelines, and live voice infrastructure on LiveKit for streaming, turn-taking, and orchestration. Shipped a production voice agent for Invygo, a UAE car rental platform, with multilingual Arabic and English booking and payment flows, and built agents for enterprise clients across KSA, UAE, and Germany, including Pepsi (Aquafina) and Dubai healthcare providers.",
   },
   {
     role: "Software Engineer Intern",

@@ -9,7 +9,7 @@ export function About() {
         aria-hidden
         className="pointer-events-none absolute -left-28 top-1/4 h-80 w-80 rounded-full bg-accent opacity-[0.07] blur-3xl"
       />
-      <div className="relative mx-auto max-w-6xl px-5 py-20 sm:px-6 sm:py-24">
+      <div className="relative mx-auto max-w-6xl px-5 py-14 sm:px-6 sm:py-16">
         <Reveal>
           <SectionLabel>About</SectionLabel>
         </Reveal>

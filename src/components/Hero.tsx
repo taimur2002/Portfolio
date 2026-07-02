@@ -68,6 +68,8 @@ export function Hero() {
         animate="show"
         className="mx-auto flex min-h-[88vh] max-w-6xl flex-col justify-center px-5 py-20 sm:px-6"
       >
+        {/* "Available for new work" badge — hidden for now (currently employed).
+            Uncomment this block to show it again.
         <motion.div variants={item}>
           <span className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white/70 px-4 py-1.5 text-sm font-medium text-zinc-700 backdrop-blur">
             <span className="relative flex h-2 w-2">
@@ -77,6 +79,7 @@ export function Hero() {
             Available for new work
           </span>
         </motion.div>
+        */}
 
         <motion.p
           variants={item}
@@ -120,10 +123,10 @@ export function Hero() {
 
         <motion.div variants={item} className="mt-8 flex flex-wrap gap-4">
           <a
-            href="#projects"
+            href="#experience"
             className="group inline-flex items-center gap-2 rounded-full bg-zinc-950 px-7 py-3.5 text-sm font-medium text-white shadow-lg shadow-zinc-900/10 transition-all hover:-translate-y-0.5 hover:shadow-xl"
           >
-            View my work
+            See my experience
             <span className="transition-transform group-hover:translate-x-1">
               →
             </span>

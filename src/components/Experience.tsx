@@ -6,7 +6,7 @@ import { CompanyLogo } from "@/components/CompanyLogo";
 export function Experience() {
   return (
     <section id="experience" className="scroll-mt-20">
-      <div className="mx-auto max-w-6xl px-5 py-20 sm:px-6 sm:py-24">
+      <div className="mx-auto max-w-6xl px-5 py-14 sm:px-6 sm:py-16">
         <Reveal>
           <SectionLabel>Experience</SectionLabel>
         </Reveal>

@@ -22,7 +22,7 @@ const nextConfig: NextConfig = {
   devIndicators: false,
   experimental: {
     /** Smaller client bundles → faster hydration after client-side navigations. */
-    optimizePackageImports: ["framer-motion"],
+    optimizePackageImports: ["framer-motion", "simple-icons", "lucide-react"],
   },
   async headers() {
     return [
