@@ -4,7 +4,7 @@ import { SectionLabel } from "@/components/SectionLabel";
 
 export function About() {
   return (
-    <section id="about" className="relative overflow-hidden scroll-mt-20">
+    <section id="about" className="relative overflow-hidden scroll-mt-16">
       <div
         aria-hidden
         className="pointer-events-none absolute -left-28 top-1/4 h-80 w-80 rounded-full bg-accent opacity-[0.07] blur-3xl"

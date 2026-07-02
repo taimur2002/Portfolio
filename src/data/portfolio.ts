@@ -38,6 +38,8 @@ export type EducationItem = {
   school: string;
   degree: string;
   period: string;
+  /** Optional school logo path in /public (e.g. "/schools/itu.png"). Falls back to a monogram. */
+  logo?: string;
 };
 
 export const profile = {
@@ -189,10 +191,6 @@ export const education: EducationItem[] = [
     school: "Information Technology University",
     degree: "BS in Computer Science",
     period: "2020 to 2024",
-  },
-  {
-    school: "Punjab Group of Colleges",
-    degree: "F.Sc Pre Engineering",
-    period: "2018 to 2020",
+    logo: "/schools/itu.png",
   },
 ];

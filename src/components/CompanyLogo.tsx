@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 /** "ETL Online" -> "ETL", "Convoi AI" -> "CA". Used when no logo image is set. */
 function monogram(name: string): string {
@@ -19,16 +22,22 @@ export function CompanyLogo({
   name: string;
   logo?: string;
 }) {
+  // If the image path is set but the file is missing/misnamed, fall back to the
+  // monogram instead of showing a broken image.
+  const [failed, setFailed] = useState(false);
+  const showImage = Boolean(logo) && !failed;
+
   return (
-    <span className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-sm">
-      {logo ? (
+    <span className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm">
+      {showImage ? (
         <Image
-          src={logo}
+          src={logo as string}
           alt={`${name} logo`}
           width={30}
           height={30}
           unoptimized
-          className="h-7 w-auto object-contain"
+          onError={() => setFailed(true)}
+          className="h-8 w-8 object-contain"
         />
       ) : (
         <span className="font-display text-sm font-bold text-accent">

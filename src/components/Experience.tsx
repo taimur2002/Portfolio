@@ -5,7 +5,7 @@ import { CompanyLogo } from "@/components/CompanyLogo";
 
 export function Experience() {
   return (
-    <section id="experience" className="scroll-mt-20">
+    <section id="experience" data-anchor-shift="40" className="scroll-mt-16">
       <div className="mx-auto max-w-6xl px-5 py-14 sm:px-6 sm:py-16">
         <Reveal>
           <SectionLabel>Experience</SectionLabel>
