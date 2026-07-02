@@ -3,6 +3,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { GradientText } from "@/components/GradientText";
 import { SocialIcon, hasSocialIcon } from "@/components/SocialIcon";
 import { CompanyLogo } from "@/components/CompanyLogo";
+import { FooterScene } from "@/components/three/FooterScene";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -17,6 +18,10 @@ export function Footer() {
         aria-hidden
         className="pointer-events-none absolute -top-32 left-1/2 -z-10 h-72 w-160 -translate-x-1/2 rounded-full bg-accent opacity-20 blur-[100px]"
       />
+
+      {/* Interactive three.js constellation — glows on the dark backdrop, edge-
+          faded so it reads as ambient depth behind the copy. */}
+      <FooterScene className="pointer-events-none absolute inset-0 -z-10 mask-[radial-gradient(130%_115%_at_50%_30%,#000_55%,transparent)]" />
 
       <div className="mx-auto max-w-6xl px-5 py-14 sm:px-6 sm:py-16">
         <div className="flex flex-col gap-12 lg:flex-row lg:items-end lg:justify-between lg:gap-16">
