@@ -2,9 +2,11 @@
 
 import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
-import { profile } from "@/data/portfolio";
+import { profile, roles } from "@/data/portfolio";
 import { GradientText } from "@/components/GradientText";
 import { HeroScene } from "@/components/three/HeroScene";
+import { RotatingText } from "@/components/motion/RotatingText";
+import { Magnetic } from "@/components/motion/Magnetic";
 
 const container: Variants = {
   hidden: {},
@@ -91,7 +93,7 @@ export function Hero() {
           variants={item}
           className="mt-8 font-display text-xs font-semibold uppercase tracking-[0.15em] text-zinc-600 sm:text-sm sm:tracking-[0.2em]"
         >
-          {profile.role}
+          <RotatingText items={roles} />
         </motion.p>
 
         <motion.h1
@@ -128,21 +130,25 @@ export function Hero() {
         </motion.div>
 
         <motion.div variants={item} className="mt-8 flex flex-wrap gap-4">
-          <a
-            href="#experience"
-            className="group inline-flex items-center gap-2 rounded-full bg-zinc-950 px-7 py-3.5 text-sm font-medium text-white shadow-lg shadow-zinc-900/10 transition-all hover:-translate-y-0.5 hover:shadow-xl"
-          >
-            See my experience
-            <span className="transition-transform group-hover:translate-x-1">
-              →
-            </span>
-          </a>
-          <a
-            href="#contact"
-            className="inline-flex items-center rounded-full border border-zinc-300 bg-white/60 px-7 py-3.5 text-sm font-medium text-zinc-900 backdrop-blur transition-all hover:-translate-y-0.5 hover:border-zinc-900"
-          >
-            Get in touch
-          </a>
+          <Magnetic>
+            <a
+              href="#experience"
+              className="group inline-flex items-center gap-2 rounded-full bg-zinc-950 px-7 py-3.5 text-sm font-medium text-white shadow-lg shadow-zinc-900/10 transition-all hover:-translate-y-0.5 hover:shadow-xl"
+            >
+              See my experience
+              <span className="transition-transform group-hover:translate-x-1">
+                →
+              </span>
+            </a>
+          </Magnetic>
+          <Magnetic>
+            <a
+              href="#contact"
+              className="inline-flex items-center rounded-full border border-zinc-300 bg-white/60 px-7 py-3.5 text-sm font-medium text-zinc-900 backdrop-blur transition-all hover:-translate-y-0.5 hover:border-zinc-900"
+            >
+              Get in touch
+            </a>
+          </Magnetic>
         </motion.div>
       </motion.div>
 

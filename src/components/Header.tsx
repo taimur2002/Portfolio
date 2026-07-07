@@ -7,6 +7,7 @@ import { profile } from "@/data/portfolio";
 const navLinks = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ];
@@ -62,13 +63,14 @@ export function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-7 text-sm sm:flex">
-          {navLinks.slice(0, 3).map((link) => (
+          {navLinks.slice(0, 4).map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-zinc-600 transition-colors hover:text-zinc-950"
+              className="group relative text-zinc-600 transition-colors hover:text-zinc-950"
             >
               {link.label}
+              <span className="absolute -bottom-1 left-0 h-0.5 w-full origin-left scale-x-0 rounded-full bg-linear-to-r from-accent to-accent-3 transition-transform duration-300 group-hover:scale-x-100" />
             </a>
           ))}
           <a

@@ -42,6 +42,20 @@ export type EducationItem = {
   logo?: string;
 };
 
+export type Project = {
+  title: string;
+  /** Short context tag, e.g. "Convoi AI" or "Personal project". */
+  tag?: string;
+  description: string;
+  tech: string[];
+  /** Optional public link (live site / repo). Omit for internal tools with no public URL. */
+  link?: string;
+  /** Link button label, e.g. "Live site" or "GitHub". Defaults to "Visit". */
+  linkLabel?: string;
+  /** Optional screenshot in /public (e.g. "/projects/convoi-cms.png"). Use dummy/blurred data only. */
+  image?: string;
+};
+
 export const profile = {
   /** Shown in the header, hero, and browser tab. */
   name: "Taimur Khalid",
@@ -70,6 +84,14 @@ export const profile = {
    */
   url: "https://portfolio-taimur.vercel.app",
 };
+
+/** Roles that cycle in the hero eyebrow (animated flip). */
+export const roles: string[] = [
+  "Full-Stack Engineer",
+  "Voice AI Engineer",
+  "Next.js Developer",
+  "Python Developer",
+];
 
 export const socials: SocialLink[] = [
   { label: "GitHub", href: "https://github.com/taimur2002" },
@@ -182,6 +204,48 @@ export const experience: ExperienceItem[] = [
     period: "Apr 2025 to Jun 2025",
     description:
       "Built and maintained Next.js frontend pages for ETL Online's community platform, Pakistan's largest non-profit tech community, and developed Node.js and Express REST APIs powering its features. Contributed to a live product used by 2,300+ members across Pakistan.",
+  },
+];
+
+/**
+ * Selected projects shown as cards. Newest / most important first.
+ *
+ * Showing employer or client work? Keep it safe:
+ *  - Never put real customer data in a screenshot (blur it, or use dummy data).
+ *  - For internal tools, omit `link` (they sit behind auth anyway).
+ *  - To add a screenshot: drop the image in /public/projects/ and set `image`.
+ *
+ * Copy a block to add another project (Convoi website, dashboard, HRM, ...).
+ */
+export const projects: Project[] = [
+  {
+    title: "Convoi AI Dashboard",
+    tag: "Convoi AI",
+    description:
+      "Client-facing product dashboard for building and managing voice AI agents. Users configure agent models, voices, transcribers, knowledge bases, tools, and phone numbers, run WhatsApp calling and campaigns, manage contacts, and monitor call logs and analytics.",
+    tech: ["Next.js", "Python", "FastAPI", "PostgreSQL"],
+    link: "https://go.convoi.ai",
+    linkLabel: "Live site",
+    image: "/projects/convoi-dashboard.png",
+  },
+  {
+    title: "Convoi AI Admin CMS",
+    tag: "Convoi AI",
+    description:
+      "Internal admin platform to manage client accounts and subscriptions, billing and credits, voice providers, API keys, and model configuration. Includes role-based access control (users, roles, and permissions), call analytics with failed-call handling, number requests, and system logs.",
+    tech: ["Next.js", "Python", "FastAPI", "PostgreSQL"],
+    // Internal tool, so no public link.
+    image: "/projects/convoi-cms.png",
+  },
+  {
+    title: "Convoi AI Website",
+    tag: "Convoi AI",
+    description:
+      "Public marketing website for Convoi AI's voice-agent platform. Presents the product's multilingual voice AI, core features, and industry solutions across a responsive, animated, and fast-loading site.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    link: "https://convoi.ai/",
+    linkLabel: "Live site",
+    image: "/projects/convoi-website.png",
   },
 ];
 
