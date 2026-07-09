@@ -20,12 +20,11 @@ export function ProjectCard({
     <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-16">
       {project.image && (
         <div className={`group relative ${reversed ? "lg:order-2" : ""}`}>
-          <div className="relative aspect-2/1 overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-50 shadow-sm transition-shadow duration-300 group-hover:shadow-xl group-hover:shadow-accent/10">
+          <div className="relative aspect-2/1 overflow-hidden rounded-2xl border border-white/10 bg-surface shadow-sm transition-shadow duration-300 group-hover:shadow-xl group-hover:shadow-accent/10">
             <Image
               src={project.image}
-              alt={project.title}
+              alt={`${project.title} screenshot`}
               fill
-              unoptimized
               sizes="(min-width: 1024px) 550px, 92vw"
               className="object-cover object-top-left transition-transform duration-500 group-hover:scale-[1.03]"
             />
@@ -38,7 +37,7 @@ export function ProjectCard({
           <span className="font-display text-sm font-bold tabular-nums text-accent">
             {String(index + 1).padStart(2, "0")}
           </span>
-          <span className="h-px w-8 bg-zinc-300" />
+          <span className="h-px w-8 bg-white/20" />
           {project.tag && (
             <span className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
               {project.tag}
@@ -49,7 +48,7 @@ export function ProjectCard({
         <h3 className="mt-4 font-display text-2xl font-bold tracking-tight sm:text-3xl">
           {project.title}
         </h3>
-        <p className="mt-4 max-w-xl leading-relaxed text-zinc-600">
+        <p className="mt-4 max-w-xl leading-relaxed text-zinc-400">
           {project.description}
         </p>
 
@@ -57,7 +56,7 @@ export function ProjectCard({
           {project.tech.map((t) => (
             <li
               key={t}
-              className="rounded-full border border-zinc-200 bg-white px-3 py-1 text-sm font-medium text-zinc-700"
+              className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm font-medium text-zinc-300"
             >
               {t}
             </li>
@@ -69,7 +68,7 @@ export function ProjectCard({
             href={project.link}
             target="_blank"
             rel="noreferrer"
-            className="group/cta mt-8 inline-flex items-center gap-2 rounded-full bg-zinc-950 px-6 py-3 text-sm font-medium text-white shadow-lg shadow-zinc-900/10 transition-all hover:-translate-y-0.5 hover:shadow-xl"
+            className="group/cta mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-zinc-950 shadow-lg shadow-black/30 transition-all hover:-translate-y-0.5 hover:shadow-xl"
           >
             {project.linkLabel ?? "View project"}
             <span
@@ -80,8 +79,8 @@ export function ProjectCard({
             </span>
           </a>
         ) : (
-          <span className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-zinc-400">
-            <span className="h-1.5 w-1.5 rounded-full bg-zinc-300" />
+          <span className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-zinc-500">
+            <span className="h-1.5 w-1.5 rounded-full bg-zinc-600" />
             Internal tool
           </span>
         )}

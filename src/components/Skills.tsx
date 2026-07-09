@@ -8,7 +8,7 @@ export function Skills() {
     <section id="skills" data-anchor-shift="40" className="relative overflow-hidden scroll-mt-16">
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-28 bottom-12 h-80 w-80 rounded-full bg-accent-3 opacity-[0.07] blur-3xl"
+        className="pointer-events-none absolute -right-28 bottom-12 h-80 w-80 rounded-full bg-accent-3 opacity-[0.12] blur-3xl"
       />
       <div className="relative mx-auto max-w-6xl px-5 py-14 sm:px-6 sm:py-16">
         <Reveal>
@@ -23,7 +23,7 @@ export function Skills() {
         <div className="grid gap-8 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3">
           {skillGroups.map((group, i) => (
             <Reveal key={group.category} delay={i * 0.1} from="left">
-              <h3 className="mb-4 font-display text-sm font-semibold uppercase tracking-wide text-zinc-900">
+              <h3 className="mb-4 font-display text-sm font-semibold uppercase tracking-wide text-zinc-100">
                 {group.category}
               </h3>
               <ul className="flex flex-wrap gap-x-5 gap-y-6">
@@ -38,7 +38,7 @@ export function Skills() {
                         className="h-8 w-8 transition-transform duration-200 group-hover:-translate-y-1"
                       />
                     </div>
-                    <span className="text-xs leading-tight text-zinc-600 transition-colors group-hover:text-zinc-900">
+                    <span className="text-xs leading-tight text-zinc-400 transition-colors group-hover:text-zinc-100">
                       {item}
                     </span>
                   </li>

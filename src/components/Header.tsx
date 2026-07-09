@@ -48,8 +48,8 @@ export function Header() {
       transition={{ duration: 0.6, ease: EASE }}
       className={`sticky top-0 z-50 transition-colors duration-300 ${
         solid
-          ? "border-b border-zinc-200/70 bg-white/85 backdrop-blur-md"
-          : "border-b border-transparent bg-white/0"
+          ? "border-b border-white/10 bg-canvas/80 backdrop-blur-md"
+          : "border-b border-transparent bg-transparent"
       }`}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-6">
@@ -67,7 +67,7 @@ export function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="group relative text-zinc-600 transition-colors hover:text-zinc-950"
+              className="group relative text-zinc-400 transition-colors hover:text-white"
             >
               {link.label}
               <span className="absolute -bottom-1 left-0 h-0.5 w-full origin-left scale-x-0 rounded-full bg-linear-to-r from-accent to-accent-3 transition-transform duration-300 group-hover:scale-x-100" />
@@ -78,7 +78,7 @@ export function Header() {
               href={profile.resumeUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full border border-zinc-300 px-4 py-2 font-medium text-zinc-900 transition-all hover:-translate-y-0.5 hover:border-zinc-900"
+              className="inline-flex items-center gap-1.5 rounded-full border border-white/20 px-4 py-2 font-medium text-zinc-100 transition-all hover:-translate-y-0.5 hover:border-white/60"
             >
               Resume
               <span aria-hidden>↓</span>
@@ -86,7 +86,7 @@ export function Header() {
           )}
           <a
             href={`mailto:${profile.email}`}
-            className="rounded-full bg-zinc-950 px-4 py-2 font-medium text-white shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+            className="rounded-full bg-white px-4 py-2 font-medium text-zinc-950 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md hover:shadow-white/10"
           >
             Let&apos;s talk
           </a>
@@ -104,17 +104,17 @@ export function Header() {
             <motion.span
               animate={{ rotate: open ? 45 : 0, y: open ? 8 : 0 }}
               transition={{ duration: 0.25, ease: EASE }}
-              className="block h-0.5 w-6 rounded-full bg-zinc-900"
+              className="block h-0.5 w-6 rounded-full bg-zinc-100"
             />
             <motion.span
               animate={{ opacity: open ? 0 : 1 }}
               transition={{ duration: 0.2 }}
-              className="block h-0.5 w-6 rounded-full bg-zinc-900"
+              className="block h-0.5 w-6 rounded-full bg-zinc-100"
             />
             <motion.span
               animate={{ rotate: open ? -45 : 0, y: open ? -8 : 0 }}
               transition={{ duration: 0.25, ease: EASE }}
-              className="block h-0.5 w-6 rounded-full bg-zinc-900"
+              className="block h-0.5 w-6 rounded-full bg-zinc-100"
             />
           </span>
         </button>
@@ -128,7 +128,7 @@ export function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.28, ease: EASE }}
-            className="overflow-hidden border-b border-zinc-200 bg-white/95 backdrop-blur-md sm:hidden"
+            className="overflow-hidden border-b border-white/10 bg-canvas/95 backdrop-blur-md sm:hidden"
           >
             <div className="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-3">
               {navLinks.map((link) => (
@@ -136,7 +136,7 @@ export function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="rounded-lg px-2 py-3 text-base font-medium text-zinc-700 transition-colors hover:bg-zinc-50 hover:text-zinc-950"
+                  className="rounded-lg px-2 py-3 text-base font-medium text-zinc-300 transition-colors hover:bg-white/5 hover:text-white"
                 >
                   {link.label}
                 </a>
@@ -147,7 +147,7 @@ export function Header() {
                   target="_blank"
                   rel="noreferrer"
                   onClick={() => setOpen(false)}
-                  className="mt-2 inline-flex items-center justify-center gap-1.5 rounded-full border border-zinc-300 px-4 py-3 text-center text-base font-medium text-zinc-900"
+                  className="mt-2 inline-flex items-center justify-center gap-1.5 rounded-full border border-white/20 px-4 py-3 text-center text-base font-medium text-zinc-100"
                 >
                   Resume
                   <span aria-hidden>↓</span>
@@ -156,7 +156,7 @@ export function Header() {
               <a
                 href={`mailto:${profile.email}`}
                 onClick={() => setOpen(false)}
-                className="mt-2 rounded-full bg-zinc-950 px-4 py-3 text-center text-base font-medium text-white"
+                className="mt-2 rounded-full bg-white px-4 py-3 text-center text-base font-medium text-zinc-950"
               >
                 Let&apos;s talk
               </a>

@@ -11,7 +11,7 @@ export function Footer() {
   return (
     <footer
       id="contact"
-      className="relative isolate scroll-mt-16 overflow-hidden bg-zinc-950 text-white"
+      className="relative isolate scroll-mt-16 overflow-hidden border-t border-white/10 bg-[#040706] text-white"
     >
       {/* subtle gradient glow */}
       <div

@@ -27,8 +27,10 @@ export function CompanyLogo({
   const [failed, setFailed] = useState(false);
   const showImage = Boolean(logo) && !failed;
 
+  // Deliberately a white tile: most company marks are dark and would be
+  // unreadable directly on the dark canvas.
   return (
-    <span className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm">
+    <span className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-white/10 bg-white shadow-sm">
       {showImage ? (
         <Image
           src={logo as string}

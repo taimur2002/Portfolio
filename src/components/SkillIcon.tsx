@@ -77,6 +77,26 @@ const IMAGE_ICONS: Record<string, string> = {
   Twilio: "/companies/twilio.jpg",
 };
 
+/** Perceived luminance (0..1) of a simple-icons hex like "0A0A0A". */
+function luminanceOf(hex: string): number {
+  const r = parseInt(hex.slice(0, 2), 16);
+  const g = parseInt(hex.slice(2, 4), 16);
+  const b = parseInt(hex.slice(4, 6), 16);
+  return (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+}
+
+/** Blend a hex toward white by `t` (0..1), keeping its hue. */
+function lighten(hex: string, t: number): string {
+  const channels = [0, 2, 4].map((i) => parseInt(hex.slice(i, i + 2), 16));
+  return `#${channels
+    .map((v) =>
+      Math.round(v + (255 - v) * t)
+        .toString(16)
+        .padStart(2, "0"),
+    )
+    .join("")}`;
+}
+
 export function SkillIcon({
   name,
   className = "h-4 w-4",
@@ -100,13 +120,17 @@ export function SkillIcon({
 
   const brand = BRAND_ICONS[name];
   if (brand) {
-    // Some brand colors are near-white (e.g. LiveKit = #FFFFFF) and vanish on a
-    // light background — render those in near-black so the mark stays visible.
-    const r = parseInt(brand.hex.slice(0, 2), 16);
-    const g = parseInt(brand.hex.slice(2, 4), 16);
-    const b = parseInt(brand.hex.slice(4, 6), 16);
-    const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-    const fill = luminance > 0.9 ? "#18181b" : `#${brand.hex}`;
+    const luminance = luminanceOf(brand.hex);
+    // On the dark canvas, black-branded marks vanish outright: Next.js, Vercel,
+    // Cursor are #000000 and Express is #0A0A0A. Near-black goes to near-white
+    // (which is those brands' own dark-mode mark anyway); merely dim hues like
+    // C++ blue are lightened so they keep their brand colour.
+    const fill =
+      luminance < 0.1
+        ? "#e4e4e7"
+        : luminance < 0.35
+          ? lighten(brand.hex, 0.55)
+          : `#${brand.hex}`;
     return (
       <svg
         viewBox="0 0 24 24"

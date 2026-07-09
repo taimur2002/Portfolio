@@ -25,7 +25,7 @@ export function Experience() {
                   {/* Company logo marker + connector line */}
                   <div className="flex flex-col items-center">
                     <CompanyLogo name={item.company} logo={item.logo} />
-                    {!last && <span className="mt-3 w-px flex-1 bg-zinc-200" />}
+                    {!last && <span className="mt-3 w-px flex-1 bg-white/10" />}
                   </div>
                   {/* Content */}
                   <div className={last ? "" : "pb-10"}>
@@ -36,7 +36,7 @@ export function Experience() {
                       {item.role}
                     </h3>
                     <p className="text-zinc-500">{item.company}</p>
-                    <p className="mt-2 max-w-2xl text-zinc-600">
+                    <p className="mt-2 max-w-2xl text-zinc-400">
                       {item.description}
                     </p>
                   </div>

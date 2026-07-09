@@ -2,7 +2,7 @@ import { techStack } from "@/data/portfolio";
 
 function Pill({ label }: { label: string }) {
   return (
-    <span className="mr-3 flex shrink-0 items-center gap-2 rounded-full border border-zinc-200 bg-white px-5 py-2.5 text-sm font-medium text-zinc-700 shadow-sm">
+    <span className="mr-3 flex shrink-0 items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2.5 text-sm font-medium text-zinc-300 shadow-sm">
       <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-linear-to-r from-accent to-accent-2" />
       {label}
     </span>
@@ -37,9 +37,9 @@ export function TechMarquee() {
   return (
     <section
       aria-label="Tools and technologies"
-      className="border-y border-zinc-200/60 bg-linear-to-r from-[#e6f6ee] via-[#edf8f3] to-[#e3f8f4] py-12 sm:py-14"
+      className="border-y border-white/10 bg-linear-to-r from-[#0a1210] via-[#0c1614] to-[#091513] py-12 sm:py-14"
     >
-      <p className="mb-8 text-center text-xs font-semibold uppercase tracking-[0.2em] text-zinc-400">
+      <p className="mb-8 text-center text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
         Tools &amp; tech I work with
       </p>
       <div className="relative flex flex-col gap-3 overflow-hidden py-2 mask-[linear-gradient(to_right,transparent,#000_8%,#000_92%,transparent)]">

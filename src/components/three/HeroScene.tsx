@@ -147,8 +147,10 @@ varying float vAlpha;
 void main() {
   float d = length(gl_PointCoord - vec2(0.5));
   if (d > 0.5) discard;
-  float soft = smoothstep(0.5, 0.12, d);
-  gl_FragColor = vec4(vColor, soft * vAlpha * uOpacity);
+  // Squared falloff gives a bright core with a soft halo, which is what reads
+  // as a glow once the material blends additively onto the dark canvas.
+  float soft = smoothstep(0.5, 0.0, d);
+  gl_FragColor = vec4(vColor, soft * soft * vAlpha * uOpacity);
 }
 `;
 
@@ -260,14 +262,15 @@ function init(THREE: ThreeModule, container: HTMLDivElement): () => void {
       uSize: { value: 30 },
       uDpr: { value: baseDpr },
       uAmp: { value: 0.34 },
-      uOpacity: { value: 0.92 },
+      uOpacity: { value: 0.85 },
     },
     vertexShader: VERTEX_SHADER,
     fragmentShader: FRAGMENT_SHADER,
     transparent: true,
     depthTest: false,
     depthWrite: false,
-    blending: THREE.NormalBlending,
+    // Additive on the dark canvas: overlapping particles accumulate into light.
+    blending: THREE.AdditiveBlending,
   });
 
   const points = new THREE.Points(geometry, material);

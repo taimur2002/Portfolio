@@ -24,6 +24,23 @@ const item: Variants = {
   },
 };
 
+/**
+ * The <h1> is the page's LCP element. Starting it at `opacity: 0` (like `item`)
+ * leaves it unpainted until React hydrates and the stagger runs, which cost
+ * ~1.7s of LCP on desktop and far more on throttled mobile.
+ *
+ * So the headline slides without fading. Framer renders the initial transform
+ * server-side, and a transformed element still counts as painted, so the
+ * headline lands in the very first frame. Everything else keeps its fade.
+ */
+const headline: Variants = {
+  hidden: { y: 28 },
+  show: {
+    y: 0,
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
 export function Hero() {
   return (
     <section className="relative isolate overflow-hidden">
@@ -65,7 +82,7 @@ export function Hero() {
         className="pointer-events-none absolute inset-0 -z-10 mask-[radial-gradient(ellipse_60%_60%_at_50%_40%,#000,transparent)]"
         style={{
           backgroundImage:
-            "radial-gradient(circle at 1px 1px, rgba(10,10,10,0.07) 1px, transparent 0)",
+            "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0)",
           backgroundSize: "26px 26px",
         }}
       />
@@ -79,7 +96,7 @@ export function Hero() {
         {/* "Available for new work" badge — hidden for now (currently employed).
             Uncomment this block to show it again.
         <motion.div variants={item}>
-          <span className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white/70 px-4 py-1.5 text-sm font-medium text-zinc-700 backdrop-blur">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-zinc-300 backdrop-blur">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
@@ -91,13 +108,13 @@ export function Hero() {
 
         <motion.p
           variants={item}
-          className="mt-8 font-display text-xs font-semibold uppercase tracking-[0.15em] text-zinc-600 sm:text-sm sm:tracking-[0.2em]"
+          className="mt-8 font-display text-xs font-semibold uppercase tracking-[0.15em] text-zinc-400 sm:text-sm sm:tracking-[0.2em]"
         >
           <RotatingText items={roles} />
         </motion.p>
 
         <motion.h1
-          variants={item}
+          variants={headline}
           className="mt-4 max-w-4xl font-display text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl sm:leading-[1.05] md:text-6xl lg:text-7xl"
         >
           {profile.tagline.split(" ").slice(0, -2).join(" ")}{" "}
@@ -108,14 +125,14 @@ export function Hero() {
 
         <motion.p
           variants={item}
-          className="mt-7 max-w-2xl text-lg leading-relaxed text-zinc-600 sm:text-xl"
+          className="mt-7 max-w-2xl text-lg leading-relaxed text-zinc-400 sm:text-xl"
         >
           Hi, I&apos;m {profile.name}. Welcome to my corner of the web. Take a
           look around at what I&apos;ve been building.
         </motion.p>
 
         <motion.div variants={item} className="mt-6">
-          <span className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white/70 px-3.5 py-1.5 text-sm text-zinc-600 backdrop-blur">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-sm text-zinc-400 backdrop-blur">
             <Image
               src="/companies/convoi.svg"
               alt="Convoi AI"
@@ -125,7 +142,7 @@ export function Hero() {
               className="h-4 w-auto"
             />
             Currently at{" "}
-            <span className="font-semibold text-zinc-900">Convoi AI</span>
+            <span className="font-semibold text-zinc-100">Convoi AI</span>
           </span>
         </motion.div>
 
@@ -133,7 +150,7 @@ export function Hero() {
           <Magnetic>
             <a
               href="#experience"
-              className="group inline-flex items-center gap-2 rounded-full bg-zinc-950 px-7 py-3.5 text-sm font-medium text-white shadow-lg shadow-zinc-900/10 transition-all hover:-translate-y-0.5 hover:shadow-xl"
+              className="group inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-medium text-zinc-950 shadow-lg shadow-black/30 transition-all hover:-translate-y-0.5 hover:shadow-xl"
             >
               See my experience
               <span className="transition-transform group-hover:translate-x-1">
@@ -144,7 +161,7 @@ export function Hero() {
           <Magnetic>
             <a
               href="#contact"
-              className="inline-flex items-center rounded-full border border-zinc-300 bg-white/60 px-7 py-3.5 text-sm font-medium text-zinc-900 backdrop-blur transition-all hover:-translate-y-0.5 hover:border-zinc-900"
+              className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-7 py-3.5 text-sm font-medium text-zinc-100 backdrop-blur transition-all hover:-translate-y-0.5 hover:border-white/60"
             >
               Get in touch
             </a>
@@ -162,9 +179,9 @@ export function Hero() {
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-          className="flex h-9 w-5 items-start justify-center rounded-full border border-zinc-300 p-1"
+          className="flex h-9 w-5 items-start justify-center rounded-full border border-white/20 p-1"
         >
-          <span className="h-1.5 w-1 rounded-full bg-zinc-400" />
+          <span className="h-1.5 w-1 rounded-full bg-zinc-500" />
         </motion.div>
       </motion.div>
     </section>

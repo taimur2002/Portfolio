@@ -7,7 +7,7 @@ export function About() {
     <section id="about" className="relative overflow-hidden scroll-mt-16">
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-28 top-1/4 h-80 w-80 rounded-full bg-accent opacity-[0.07] blur-3xl"
+        className="pointer-events-none absolute -left-28 top-1/4 h-80 w-80 rounded-full bg-accent opacity-[0.12] blur-3xl"
       />
       <div className="relative mx-auto max-w-6xl px-5 py-14 sm:px-6 sm:py-16">
         <Reveal>
@@ -19,7 +19,7 @@ export function About() {
               A bit about me
             </h2>
           </Reveal>
-          <div className="space-y-5 text-lg leading-relaxed text-zinc-600 sm:text-xl">
+          <div className="space-y-5 text-lg leading-relaxed text-zinc-400 sm:text-xl">
             {profile.about.map((paragraph, i) => (
               <Reveal key={i} delay={0.08 * (i + 1)}>
                 <p>{paragraph}</p>

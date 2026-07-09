@@ -6,10 +6,11 @@ export const alt = `${profile.name} · Portfolio`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-// Match the site theme (globals.css): light mint background, teal→cyan accents.
+// Match the site theme (globals.css): dark canvas, teal→cyan accents.
 const ACCENT = "#10b981";
 const ACCENT_3 = "#06b6d4";
-const INK = "#0a0a0a";
+const INK = "#e4e4e7";
+const MUTED = "#a1a1aa";
 
 /** Branded social share image used for link previews (Open Graph + Twitter). */
 export default function OpengraphImage() {
@@ -23,7 +24,7 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           background:
-            "linear-gradient(135deg, #f2faf6 0%, #e8f7f0 55%, #e2f4f6 100%)",
+            "linear-gradient(135deg, #070b0a 0%, #0b1512 55%, #08161a 100%)",
           padding: 80,
           color: INK,
           fontFamily: "sans-serif",
@@ -49,7 +50,7 @@ export default function OpengraphImage() {
               fontSize: 26,
               letterSpacing: 6,
               textTransform: "uppercase",
-              color: "#52525b",
+              color: MUTED,
             }}
           >
             {profile.role}
@@ -76,7 +77,7 @@ export default function OpengraphImage() {
               background: `linear-gradient(90deg, ${ACCENT}, ${ACCENT_3})`,
             }}
           />
-          <div style={{ fontSize: 24, color: "#52525b" }}>{profile.email}</div>
+          <div style={{ fontSize: 24, color: MUTED }}>{profile.email}</div>
         </div>
       </div>
     ),

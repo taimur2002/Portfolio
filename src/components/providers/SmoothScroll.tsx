@@ -65,7 +65,11 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
     <ReactLenis
       root
       options={{
-        lerp: 0.1,
+        // Two separate feels, tuned independently:
+        //   lerp            how fast the view catches its target (lower = longer glide)
+        //   wheelMultiplier how far one wheel tick travels (lower = slower scroll)
+        lerp: 0.08,
+        wheelMultiplier: 0.5,
         smoothWheel: true,
         anchors: false,
       }}
