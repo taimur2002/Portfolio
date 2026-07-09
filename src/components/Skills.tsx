@@ -1,4 +1,4 @@
-import { profile, skillGroups } from "@/data/portfolio";
+import { skillGroups } from "@/data/portfolio";
 import { Reveal } from "@/components/motion/Reveal";
 import { SectionLabel } from "@/components/SectionLabel";
 import { SkillIcon } from "@/components/SkillIcon";
@@ -48,19 +48,6 @@ export function Skills() {
           ))}
         </div>
 
-        {profile.resumeUrl && (
-          <Reveal delay={0.15}>
-            <a
-              href={profile.resumeUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-14 inline-flex items-center gap-2 rounded-full border border-zinc-300 px-7 py-3.5 text-sm font-medium text-zinc-900 transition-all hover:-translate-y-0.5 hover:border-zinc-900"
-            >
-              Download résumé
-              <span aria-hidden>↓</span>
-            </a>
-          </Reveal>
-        )}
       </div>
     </section>
   );

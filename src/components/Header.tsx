@@ -73,6 +73,17 @@ export function Header() {
               <span className="absolute -bottom-1 left-0 h-0.5 w-full origin-left scale-x-0 rounded-full bg-linear-to-r from-accent to-accent-3 transition-transform duration-300 group-hover:scale-x-100" />
             </a>
           ))}
+          {profile.resumeUrl && (
+            <a
+              href={profile.resumeUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full border border-zinc-300 px-4 py-2 font-medium text-zinc-900 transition-all hover:-translate-y-0.5 hover:border-zinc-900"
+            >
+              Resume
+              <span aria-hidden>↓</span>
+            </a>
+          )}
           <a
             href={`mailto:${profile.email}`}
             className="rounded-full bg-zinc-950 px-4 py-2 font-medium text-white shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
@@ -130,6 +141,18 @@ export function Header() {
                   {link.label}
                 </a>
               ))}
+              {profile.resumeUrl && (
+                <a
+                  href={profile.resumeUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => setOpen(false)}
+                  className="mt-2 inline-flex items-center justify-center gap-1.5 rounded-full border border-zinc-300 px-4 py-3 text-center text-base font-medium text-zinc-900"
+                >
+                  Resume
+                  <span aria-hidden>↓</span>
+                </a>
+              )}
               <a
                 href={`mailto:${profile.email}`}
                 onClick={() => setOpen(false)}

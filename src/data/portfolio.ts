@@ -74,7 +74,7 @@ export const profile = {
   /** Phone number shown in the contact section as a tel: link. Leave "" to hide. */
   phone: "+923054658619",
   /** Optional: path to a CV/resume file placed in /public (e.g. \"/resume.pdf\"). Omit to hide the button. */
-  resumeUrl: "",
+  resumeUrl: "/Taimur-Khalid-CV.pdf",
   /** Footer location line (optional). */
   location: "Lahore, Pakistan",
   /**
@@ -223,7 +223,7 @@ export const projects: Project[] = [
     tag: "Convoi AI",
     description:
       "Client-facing product dashboard for building and managing voice AI agents. Users configure agent models, voices, transcribers, knowledge bases, tools, and phone numbers, run WhatsApp calling and campaigns, manage contacts, and monitor call logs and analytics.",
-    tech: ["Next.js", "Python", "FastAPI", "PostgreSQL"],
+    tech: ["Next.js", "Python", "FastAPI", "LiveKit", "PostgreSQL"],
     link: "https://go.convoi.ai",
     linkLabel: "Live site",
     image: "/projects/convoi-dashboard.png",
