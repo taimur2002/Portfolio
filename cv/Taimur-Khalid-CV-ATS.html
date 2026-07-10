@@ -65,7 +65,7 @@
 
       /* ---------- Sections ---------- */
       section {
-        margin-top: 14px;
+        margin-top: 13px;
       }
       h2 {
         font-size: 12px;
@@ -74,8 +74,8 @@
         letter-spacing: 1.2px;
         color: #000;
         border-bottom: 1.5px solid #000;
-        padding-bottom: 3px;
-        margin-bottom: 7px;
+        padding-bottom: 2px;
+        margin-bottom: 6px;
       }
 
       .summary {
@@ -85,7 +85,7 @@
 
       /* ---------- Experience / Projects ---------- */
       .entry {
-        margin-bottom: 11px;
+        margin-bottom: 8px;
       }
       .entry:last-child {
         margin-bottom: 0;
@@ -194,7 +194,7 @@
           min-height: auto;
           margin: 0;
           box-shadow: none;
-          padding: 13mm 16mm;
+          padding: 11mm 15mm;
         }
         .entry,
         li {
@@ -211,7 +211,7 @@
         <div class="contact">
           Lahore, Pakistan<span class="sep">|</span>+92 305 4658619<span class="sep">|</span><a href="mailto:taimurkhalid3@gmail.com">taimurkhalid3@gmail.com</a>
           <br />
-          <a href="https://www.linkedin.com/in/taimur-khalid-41a259292" target="_blank" rel="noreferrer">linkedin.com/in/taimur-khalid</a><span class="sep">|</span><a href="https://github.com/taimur2002" target="_blank" rel="noreferrer">github.com/taimur2002</a><span class="sep">|</span><a href="https://portfolio-taimur.vercel.app" target="_blank" rel="noreferrer">portfolio-taimur.vercel.app</a>
+          <a href="https://www.linkedin.com/in/taimur-khalid" target="_blank" rel="noreferrer">linkedin.com/in/taimur-khalid</a><span class="sep">|</span><a href="https://github.com/taimur2002" target="_blank" rel="noreferrer">github.com/taimur2002</a><span class="sep">|</span><a href="https://portfolio-taimur.vercel.app" target="_blank" rel="noreferrer">portfolio-taimur.vercel.app</a>
         </div>
       </header>
 
@@ -288,19 +288,20 @@
 
         <div class="entry">
           <div class="entry-head">
-            <div class="entry-title"><b>Convoi AI Dashboard</b></div>
+            <div class="entry-title"><b>Convoi AI Voice Platform</b></div>
             <div class="entry-dates">
               <a class="proj-link" href="https://go.convoi.ai" target="_blank" rel="noreferrer">go.convoi.ai</a>
             </div>
           </div>
           <div class="proj-desc">
-            Client-facing product dashboard for building and managing voice AI agents.
-            Users configure agent models, voices, transcribers, knowledge bases, tools,
-            and phone numbers, run WhatsApp calling and campaigns, manage contacts, and
-            monitor call logs and analytics.
+            Production platform where teams build, launch, and monitor AI phone agents
+            that make and take real calls. Built the dashboard and the services behind
+            it: campaign orchestration, live transcription over LiveKit, call
+            analytics, knowledge bases, phone number provisioning, and Stripe billing.
           </div>
           <div class="proj-tech">
-            <b>Tech:</b> Next.js, Python, FastAPI, LiveKit, PostgreSQL
+            <b>Tech:</b> Next.js, TypeScript, TanStack Query, Python, FastAPI, LiveKit,
+            Stripe, PostgreSQL
           </div>
         </div>
 
@@ -310,30 +311,31 @@
             <div class="entry-dates proj-link">Internal tool</div>
           </div>
           <div class="proj-desc">
-            Internal admin platform to manage client accounts and subscriptions,
-            billing and credits, voice providers, API keys, and model configuration.
-            Includes role-based access control, call analytics with failed-call
-            handling, number requests, and system logs.
+            Internal admin platform for client accounts, subscriptions, billing and
+            credits, voice providers, API keys, and model configuration, with
+            role-based access control, call analytics, and system logs.
           </div>
           <div class="proj-tech">
-            <b>Tech:</b> Next.js, Python, FastAPI, PostgreSQL
+            <b>Tech:</b> Next.js, TypeScript, TanStack Query, Python, FastAPI,
+            PostgreSQL
           </div>
         </div>
 
         <div class="entry">
           <div class="entry-head">
-            <div class="entry-title"><b>Convoi AI Website</b></div>
+            <div class="entry-title"><b>Convoi AI Website &amp; Developer Docs</b></div>
             <div class="entry-dates">
               <a class="proj-link" href="https://convoi.ai/" target="_blank" rel="noreferrer">convoi.ai</a>
             </div>
           </div>
           <div class="proj-desc">
-            Public marketing website for Convoi AI's voice-agent platform. Presents the
-            product's multilingual voice AI, core features, and industry solutions
-            across a responsive, animated, and fast-loading site.
+            Public marketing site and developer documentation for the voice-agent
+            platform. Built a live in-browser voice demo over LiveKit WebRTC, letting
+            prospects talk to the AI agent from the homepage instead of booking a call,
+            and shipped an interactive API reference generated from the OpenAPI spec.
           </div>
           <div class="proj-tech">
-            <b>Tech:</b> Next.js, TypeScript, Tailwind CSS
+            <b>Tech:</b> Next.js, React, TypeScript, Tailwind CSS, LiveKit, OpenAPI
           </div>
         </div>
       </section>
@@ -344,11 +346,12 @@
           <b>Languages:</b> Python, TypeScript, JavaScript, C/C++, SQL
         </div>
         <div class="skill-row">
-          <b>Frontend:</b> Next.js, React, Tailwind CSS, HTML, CSS
+          <b>Frontend:</b> Next.js, React, TypeScript, Tailwind CSS, Zustand,
+          TanStack Query
         </div>
         <div class="skill-row">
           <b>Backend &amp; APIs:</b> FastAPI, Node.js, Express.js, REST APIs,
-          WebSockets, PostgreSQL
+          WebSockets, Stripe, PostgreSQL
         </div>
         <div class="skill-row">
           <b>AI / Voice:</b> LiveKit, Twilio, LLM Integration, Speech-to-Text,

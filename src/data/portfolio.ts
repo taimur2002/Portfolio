@@ -97,7 +97,7 @@ export const socials: SocialLink[] = [
   { label: "GitHub", href: "https://github.com/taimur2002" },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/taimur-khalid-41a259292",
+    href: "https://www.linkedin.com/in/taimur-khalid",
   },
 ];
 
@@ -142,7 +142,15 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     category: "Frontend",
-    items: ["Next.js", "React", "Tailwind CSS", "HTML", "CSS"],
+    items: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Zustand",
+      "TanStack Query",
+      "HTML",
+      "CSS",
+    ],
   },
   {
     category: "Backend & APIs",
@@ -152,6 +160,7 @@ export const skillGroups: SkillGroup[] = [
       "Express.js",
       "REST APIs",
       "WebSockets",
+      "Stripe",
       "PostgreSQL",
     ],
   },
@@ -219,11 +228,21 @@ export const experience: ExperienceItem[] = [
  */
 export const projects: Project[] = [
   {
-    title: "Convoi AI Dashboard",
+    title: "Convoi AI Voice Platform",
     tag: "Convoi AI",
     description:
-      "Client-facing product dashboard for building and managing voice AI agents. Users configure agent models, voices, transcribers, knowledge bases, tools, and phone numbers, run WhatsApp calling and campaigns, manage contacts, and monitor call logs and analytics.",
-    tech: ["Next.js", "Python", "FastAPI", "LiveKit", "PostgreSQL"],
+      "Convoi AI is a production platform where teams build, launch, and monitor AI phone agents that make and take real calls. I build the Next.js dashboard and the Python/FastAPI services behind it: campaign orchestration, live transcription over LiveKit, call analytics, knowledge bases, phone number provisioning, and Stripe billing, on PostgreSQL.",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Zustand",
+      "TanStack Query",
+      "Python",
+      "FastAPI",
+      "LiveKit",
+      "Stripe",
+      "PostgreSQL",
+    ],
     link: "https://go.convoi.ai",
     linkLabel: "Live site",
     image: "/projects/convoi-dashboard.png",
@@ -232,17 +251,35 @@ export const projects: Project[] = [
     title: "Convoi AI Admin CMS",
     tag: "Convoi AI",
     description:
-      "Internal admin platform to manage client accounts and subscriptions, billing and credits, voice providers, API keys, and model configuration. Includes role-based access control (users, roles, and permissions), call analytics with failed-call handling, number requests, and system logs.",
-    tech: ["Next.js", "Python", "FastAPI", "PostgreSQL"],
+      "The internal admin platform behind Convoi AI. I built it to manage client accounts and subscriptions, billing and credits, voice providers, API keys, and model configuration, with role-based access control (users, roles, and permissions), call analytics with failed-call handling, number requests, and system logs.",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Zustand",
+      "TanStack Query",
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+    ],
     // Internal tool, so no public link.
     image: "/projects/convoi-cms.png",
   },
   {
-    title: "Convoi AI Website",
+    title: "Convoi AI Website & Developer Docs",
     tag: "Convoi AI",
     description:
-      "Public marketing website for Convoi AI's voice-agent platform. Presents the product's multilingual voice AI, core features, and industry solutions across a responsive, animated, and fast-loading site.",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      "The marketing site and developer documentation for Convoi AI. I built it around a demo call that runs in the browser: rather than describing what the agent sounds like, the homepage lets you press a button and talk to it over WebRTC through LiveKit. The rest is content-driven, with one set of route templates rendering every doc page, case study, solution, and knowledge-base article from typed config, so adding content never means adding a component. The developer docs render an interactive API reference straight from the OpenAPI spec.",
+    tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "LiveKit",
+      "Scalar",
+      "Framer Motion",
+      "Lenis",
+      "Zod",
+    ],
     link: "https://convoi.ai/",
     linkLabel: "Live site",
     image: "/projects/convoi-website.png",

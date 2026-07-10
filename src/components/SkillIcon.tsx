@@ -19,6 +19,8 @@ import {
   siClaude,
   siSentry,
   siCursor,
+  siStripe,
+  siTanstack,
   type SimpleIcon,
 } from "simple-icons";
 import {
@@ -30,6 +32,7 @@ import {
   Volume2,
   Sparkles,
   Bot,
+  Layers,
   type LucideIcon,
 } from "lucide-react";
 
@@ -54,6 +57,8 @@ const BRAND_ICONS: Record<string, SimpleIcon> = {
   "Claude Code": siClaude,
   Sentry: siSentry,
   Cursor: siCursor,
+  Stripe: siStripe,
+  "TanStack Query": siTanstack,
 };
 
 /**
@@ -69,6 +74,8 @@ const CONCEPT_ICONS: Record<string, { icon: LucideIcon; color: string }> = {
   "Text to Speech": { icon: Volume2, color: "#ca8a04" }, // gold
   "Prompt Engineering": { icon: Sparkles, color: "#0d9488" }, // teal
   "Conversational AI": { icon: Bot, color: "#4f46e5" }, // indigo
+  // simple-icons has no Zustand mark, so a concept icon stands in.
+  Zustand: { icon: Layers, color: "#e11d48" }, // rose
 };
 
 /** Skills rendered from a real image asset in /public (official app icons). */
