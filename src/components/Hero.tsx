@@ -91,7 +91,10 @@ export function Hero() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="mx-auto flex min-h-[88vh] max-w-6xl flex-col justify-center px-5 py-20 sm:px-6"
+        // `svh` (small viewport height) on mobile: plain `vh` measures the
+        // viewport as if the browser's URL bar were hidden, so the hero renders
+        // taller than the screen and reads as dead space.
+        className="mx-auto flex min-h-[70svh] max-w-6xl flex-col justify-center px-5 py-10 sm:min-h-[88vh] sm:px-6 sm:py-20"
       >
         {/* "Available for new work" badge — hidden for now (currently employed).
             Uncomment this block to show it again.
@@ -150,7 +153,7 @@ export function Hero() {
           <Magnetic>
             <a
               href="#experience"
-              className="group inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-medium text-zinc-950 shadow-lg shadow-black/30 transition-all hover:-translate-y-0.5 hover:shadow-xl"
+              className="group inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-medium text-zinc-950 shadow-lg shadow-accent/25 transition-all hover:-translate-y-0.5 hover:bg-accent-2 hover:shadow-xl hover:shadow-accent/30"
             >
               See my experience
               <span className="transition-transform group-hover:translate-x-1">
@@ -161,7 +164,7 @@ export function Hero() {
           <Magnetic>
             <a
               href="#contact"
-              className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-7 py-3.5 text-sm font-medium text-zinc-100 backdrop-blur transition-all hover:-translate-y-0.5 hover:border-white/60"
+              className="beam-border inline-flex items-center rounded-full border border-white/20 bg-white/5 px-7 py-3.5 text-sm font-medium text-zinc-100 backdrop-blur transition-all hover:-translate-y-0.5 hover:border-accent/30"
             >
               Get in touch
             </a>

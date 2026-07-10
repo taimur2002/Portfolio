@@ -92,6 +92,79 @@ body {
   overflow-x: clip;
 }
 
+/**
+ * Animated border beam (see .beam-border below).
+ *
+ * A custom property can only be *animated* if the browser knows its type, which
+ * is what @property declares. Without this the angle would jump, not sweep.
+ * Browsers that lack @property simply render a static gradient ring, which is a
+ * fine fallback.
+ */
+@property --beam-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes beam-spin {
+  to {
+    --beam-angle: 360deg;
+  }
+}
+
+/**
+ * Two emerald rays that start together, run around opposite sides of the
+ * element, and meet at the far end. Built from a conic gradient with two bright
+ * arcs 180° apart, masked so only a 1px ring on the border box survives.
+ */
+.beam-border {
+  position: relative;
+  isolation: isolate;
+}
+
+.beam-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px; /* sit exactly on the element's own 1px border */
+  border-radius: inherit;
+  padding: 1px; /* ring thickness */
+  background: conic-gradient(
+    from var(--beam-angle),
+    transparent 0deg,
+    var(--color-accent) 20deg,
+    var(--color-accent-3) 40deg,
+    transparent 80deg,
+    transparent 180deg,
+    var(--color-accent) 200deg,
+    var(--color-accent-3) 220deg,
+    transparent 260deg
+  );
+  /* Punch out the middle so only the padding ring paints. */
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.beam-border:hover::before,
+.beam-border:focus-visible::before {
+  opacity: 1;
+  animation: beam-spin 1.8s linear infinite;
+}
+
+/* Soft green bloom so the rays read as light, not just a coloured edge. */
+.beam-border:hover,
+.beam-border:focus-visible {
+  box-shadow: 0 0 22px -10px var(--color-accent);
+}
+
 ::selection {
   /* Subtle on-brand tint (not a heavy solid block); text keeps its own color. */
   background-color: color-mix(in srgb, var(--color-accent) 22%, transparent);
@@ -104,6 +177,11 @@ body {
   }
   .animate-blob,
   .animate-marquee {
+    animation: none;
+  }
+  /* Keep the ring, drop the sweep. */
+  .beam-border:hover::before,
+  .beam-border:focus-visible::before {
     animation: none;
   }
 }

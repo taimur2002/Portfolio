@@ -68,7 +68,7 @@ export function ProjectCard({
             href={project.link}
             target="_blank"
             rel="noreferrer"
-            className="group/cta mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-zinc-950 shadow-lg shadow-black/30 transition-all hover:-translate-y-0.5 hover:shadow-xl"
+            className="group/cta mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-zinc-950 shadow-lg shadow-accent/25 transition-all hover:-translate-y-0.5 hover:bg-accent-2 hover:shadow-xl hover:shadow-accent/30"
           >
             {project.linkLabel ?? "View project"}
             <span

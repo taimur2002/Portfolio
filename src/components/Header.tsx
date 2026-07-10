@@ -78,7 +78,7 @@ export function Header() {
               href={profile.resumeUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full border border-white/20 px-4 py-2 font-medium text-zinc-100 transition-all hover:-translate-y-0.5 hover:border-white/60"
+              className="beam-border inline-flex items-center gap-1.5 rounded-full border border-white/20 px-4 py-2 font-medium text-zinc-100 transition-all hover:-translate-y-0.5 hover:border-accent/30"
             >
               Resume
               <span aria-hidden>↓</span>
@@ -86,7 +86,7 @@ export function Header() {
           )}
           <a
             href={`mailto:${profile.email}`}
-            className="rounded-full bg-white px-4 py-2 font-medium text-zinc-950 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md hover:shadow-white/10"
+            className="rounded-full bg-accent px-4 py-2 font-medium text-zinc-950 shadow-sm transition-all hover:-translate-y-0.5 hover:bg-accent-2 hover:shadow-md hover:shadow-accent/25"
           >
             Let&apos;s talk
           </a>
@@ -147,7 +147,7 @@ export function Header() {
                   target="_blank"
                   rel="noreferrer"
                   onClick={() => setOpen(false)}
-                  className="mt-2 inline-flex items-center justify-center gap-1.5 rounded-full border border-white/20 px-4 py-3 text-center text-base font-medium text-zinc-100"
+                  className="beam-border mt-2 inline-flex items-center justify-center gap-1.5 rounded-full border border-white/20 px-4 py-3 text-center text-base font-medium text-zinc-100"
                 >
                   Resume
                   <span aria-hidden>↓</span>
@@ -156,7 +156,7 @@ export function Header() {
               <a
                 href={`mailto:${profile.email}`}
                 onClick={() => setOpen(false)}
-                className="mt-2 rounded-full bg-white px-4 py-3 text-center text-base font-medium text-zinc-950"
+                className="mt-2 rounded-full bg-accent px-4 py-3 text-center text-base font-medium text-zinc-950"
               >
                 Let&apos;s talk
               </a>
