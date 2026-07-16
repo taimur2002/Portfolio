@@ -37,7 +37,7 @@ export function TechMarquee() {
   return (
     <section
       aria-label="Tools and technologies"
-      className="border-y border-white/10 bg-linear-to-r from-[#0a1210] via-[#0c1614] to-[#091513] py-12 sm:py-14"
+      className="border-y border-white/10 bg-linear-to-r from-[#14100a] via-[#181109] to-[#120d07] py-12 sm:py-14"
     >
       <p className="mb-8 text-center text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
         Tools &amp; tech I work with

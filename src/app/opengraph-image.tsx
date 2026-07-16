@@ -6,9 +6,9 @@ export const alt = `${profile.name} · Portfolio`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-// Match the site theme (globals.css): dark canvas, teal→cyan accents.
-const ACCENT = "#10b981";
-const ACCENT_3 = "#06b6d4";
+// Match the site theme (globals.css): dark canvas, orange to red accents.
+const ACCENT = "#f97316";
+const ACCENT_3 = "#ef4444";
 const INK = "#e4e4e7";
 const MUTED = "#a1a1aa";
 
@@ -24,7 +24,7 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           background:
-            "linear-gradient(135deg, #070b0a 0%, #0b1512 55%, #08161a 100%)",
+            "linear-gradient(135deg, #0e0a06 0%, #1e1108 55%, #170d05 100%)",
           padding: 80,
           color: INK,
           fontFamily: "sans-serif",

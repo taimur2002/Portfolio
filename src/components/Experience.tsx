@@ -29,7 +29,7 @@ export function Experience() {
                   </div>
                   {/* Content */}
                   <div className={last ? "" : "pb-10"}>
-                    <p className="text-sm font-semibold text-accent">
+                    <p className="inline-block bg-linear-to-r from-accent via-accent-2 to-accent-3 bg-clip-text text-sm font-semibold text-transparent">
                       {item.period}
                     </p>
                     <h3 className="mt-1 font-display text-lg font-semibold tracking-tight">

@@ -18,14 +18,14 @@
   --font-display: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
-  /* Dark theme base. Near-black with a faint green cast so it sits in the same
-     hue family as the emerald/teal/cyan accents. Retune the whole site here. */
-  --color-canvas: #070b0a;
-  --color-surface: #0e1413;
+  /* Dark theme base. Near-black with a faint warm cast so it sits in the same
+     hue family as the orange to red accents. Retune the whole site here. */
+  --color-canvas: #0e0a06;
+  --color-surface: #1e1409;
 
-  --color-accent: #10b981;
-  --color-accent-2: #14b8a6;
-  --color-accent-3: #06b6d4;
+  --color-accent: #f97316;
+  --color-accent-2: #f4582b;
+  --color-accent-3: #ef4444;
 
   --animate-blob: blob 16s ease-in-out infinite;
   --animate-marquee: marquee 36s linear infinite;
@@ -113,7 +113,7 @@ body {
 }
 
 /**
- * Two emerald rays that start together, run around opposite sides of the
+ * Two orange-red rays that start together, run around opposite sides of the
  * element, and meet at the far end. Built from a conic gradient with two bright
  * arcs 180° apart, masked so only a 1px ring on the border box survives.
  */
@@ -159,7 +159,7 @@ body {
   animation: beam-spin 1.8s linear infinite;
 }
 
-/* Soft green bloom so the rays read as light, not just a coloured edge. */
+/* Soft warm bloom so the rays read as light, not just a coloured edge. */
 .beam-border:hover,
 .beam-border:focus-visible {
   box-shadow: 0 0 22px -10px var(--color-accent);

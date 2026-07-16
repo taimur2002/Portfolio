@@ -32,9 +32,9 @@ type IdleWindow = Window & {
 
 // Brand accents as raw sRGB triplets (globals.css --color-accent*).
 const PALETTE: [number, number, number][] = [
-  [16 / 255, 185 / 255, 129 / 255], // #10b981 emerald
-  [20 / 255, 184 / 255, 166 / 255], // #14b8a6 teal
-  [6 / 255, 182 / 255, 212 / 255], // #06b6d4 cyan
+  [249 / 255, 115 / 255, 22 / 255], // #f97316 orange
+  [244 / 255, 88 / 255, 43 / 255], // #f4582b orange-red
+  [239 / 255, 68 / 255, 68 / 255], // #ef4444 red
 ];
 
 function paletteAt(t: number): [number, number, number] {

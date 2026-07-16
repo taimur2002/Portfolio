@@ -11,7 +11,7 @@ export function Footer() {
   return (
     <footer
       id="contact"
-      className="relative isolate scroll-mt-16 overflow-hidden border-t border-white/10 bg-[#040706] text-white"
+      className="relative isolate scroll-mt-16 overflow-hidden border-t border-white/10 bg-[#0a0603] text-white"
     >
       {/* subtle gradient glow */}
       <div
@@ -50,7 +50,7 @@ export function Footer() {
               <span className="max-w-full wrap-anywhere bg-linear-to-r from-white to-white bg-size-[0%_2px] bg-bottom-left bg-no-repeat pb-1 transition-[background-size] duration-300 group-hover:bg-size-[100%_2px]">
                 {profile.email}
               </span>
-              <span className="shrink-0 text-accent transition-transform duration-300 group-hover:translate-x-1">
+              <span className="shrink-0 bg-linear-to-r from-accent via-accent-2 to-accent-3 bg-clip-text text-transparent transition-transform duration-300 group-hover:translate-x-1">
                 →
               </span>
             </a>

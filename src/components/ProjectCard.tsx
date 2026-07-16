@@ -34,7 +34,7 @@ export function ProjectCard({
 
       <div className={reversed ? "lg:order-1" : ""}>
         <div className="flex items-center gap-3">
-          <span className="font-display text-sm font-bold tabular-nums text-accent">
+          <span className="bg-linear-to-r from-accent via-accent-2 to-accent-3 bg-clip-text font-display text-sm font-bold tabular-nums text-transparent">
             {String(index + 1).padStart(2, "0")}
           </span>
           <span className="h-px w-8 bg-white/20" />
@@ -68,7 +68,7 @@ export function ProjectCard({
             href={project.link}
             target="_blank"
             rel="noreferrer"
-            className="group/cta mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-zinc-950 shadow-lg shadow-accent/25 transition-all hover:-translate-y-0.5 hover:bg-accent-2 hover:shadow-xl hover:shadow-accent/30"
+            className="group/cta mt-8 inline-flex items-center gap-2 rounded-full bg-linear-to-r from-accent via-accent-2 to-accent-3 px-6 py-3 text-sm font-medium text-zinc-950 shadow-lg shadow-accent/25 transition-all hover:-translate-y-0.5 hover:brightness-110 hover:shadow-xl hover:shadow-accent/30"
           >
             {project.linkLabel ?? "View project"}
             <span

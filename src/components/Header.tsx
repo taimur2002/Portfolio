@@ -86,7 +86,7 @@ export function Header() {
           )}
           <a
             href={`mailto:${profile.email}`}
-            className="rounded-full bg-accent px-4 py-2 font-medium text-zinc-950 shadow-sm transition-all hover:-translate-y-0.5 hover:bg-accent-2 hover:shadow-md hover:shadow-accent/25"
+            className="rounded-full bg-linear-to-r from-accent via-accent-2 to-accent-3 px-4 py-2 font-medium text-zinc-950 shadow-sm transition-all hover:-translate-y-0.5 hover:brightness-110 hover:shadow-md hover:shadow-accent/25"
           >
             Let&apos;s talk
           </a>
@@ -156,7 +156,7 @@ export function Header() {
               <a
                 href={`mailto:${profile.email}`}
                 onClick={() => setOpen(false)}
-                className="mt-2 rounded-full bg-accent px-4 py-3 text-center text-base font-medium text-zinc-950"
+                className="mt-2 rounded-full bg-linear-to-r from-accent via-accent-2 to-accent-3 px-4 py-3 text-center text-base font-medium text-zinc-950"
               >
                 Let&apos;s talk
               </a>

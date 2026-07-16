@@ -153,7 +153,7 @@ export function Hero() {
           <Magnetic>
             <a
               href="#experience"
-              className="group inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-medium text-zinc-950 shadow-lg shadow-accent/25 transition-all hover:-translate-y-0.5 hover:bg-accent-2 hover:shadow-xl hover:shadow-accent/30"
+              className="group inline-flex items-center gap-2 rounded-full bg-linear-to-r from-accent via-accent-2 to-accent-3 px-7 py-3.5 text-sm font-medium text-zinc-950 shadow-lg shadow-accent/25 transition-all hover:-translate-y-0.5 hover:brightness-110 hover:shadow-xl hover:shadow-accent/30"
             >
               See my experience
               <span className="transition-transform group-hover:translate-x-1">

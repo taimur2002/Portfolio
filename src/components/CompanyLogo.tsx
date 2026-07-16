@@ -42,7 +42,7 @@ export function CompanyLogo({
           className="h-8 w-8 object-contain"
         />
       ) : (
-        <span className="font-display text-sm font-bold text-accent">
+        <span className="bg-linear-to-r from-accent via-accent-2 to-accent-3 bg-clip-text font-display text-sm font-bold text-transparent">
           {monogram(name)}
         </span>
       )}
