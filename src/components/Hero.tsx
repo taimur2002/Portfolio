@@ -4,7 +4,6 @@ import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
 import { profile, roles } from "@/data/portfolio";
 import { GradientText } from "@/components/GradientText";
-import { HeroScene } from "@/components/three/HeroScene";
 import { RotatingText } from "@/components/motion/RotatingText";
 import { Magnetic } from "@/components/motion/Magnetic";
 
@@ -44,8 +43,7 @@ const headline: Variants = {
 export function Hero() {
   return (
     <section className="relative isolate overflow-hidden">
-      {/* Soft gradient orbs — a color wash beneath the 3D layer (and the graceful
-          fallback if WebGL is unavailable). */}
+      {/* Soft gradient orbs — the hero's color wash. */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
         <div
           className="absolute animate-blob rounded-full bg-accent opacity-25 blur-3xl"
@@ -73,9 +71,6 @@ export function Hero() {
         />
       </div>
 
-      {/* Interactive three.js particle sphere (edge-faded so it reads as ambient
-          depth behind the copy). */}
-      <HeroScene className="pointer-events-none absolute inset-0 -z-10 mask-[radial-gradient(115%_95%_at_62%_38%,#000_55%,transparent)]" />
       {/* Dotted grid, faded toward the edges */}
       <div
         aria-hidden

@@ -3,12 +3,11 @@
 import { useEffect, useRef } from "react";
 
 /**
- * Glowing particle constellation for the dark footer — the visual bookend to
- * the hero sphere. A small field of accent-coloured nodes drifts slowly and
- * links up with nearby neighbours; on the near-black footer, additive blending
- * turns them into soft neon glows (something the light hero couldn't do).
+ * Glowing particle constellation for the dark footer. A small field of
+ * accent-coloured nodes drifts slowly and links up with nearby neighbours; on
+ * the near-black footer, additive blending turns them into soft neon glows.
  *
- * Same "never lags" engine as HeroScene:
+ * Engineered to never lag:
  *  - Tiny node count (≤80), so the per-frame drift + link rebuild is a fraction
  *    of a millisecond on the CPU; points and lines render additively on the GPU.
  *  - Adaptive quality (DPR → FPS) driven by a rolling frame-time average.
