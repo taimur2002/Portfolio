@@ -7,7 +7,7 @@ export function About() {
     <section id="about" className="relative overflow-hidden scroll-mt-16">
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-28 top-1/4 h-80 w-80 rounded-full bg-accent opacity-[0.12] blur-3xl"
+        className="pointer-events-none absolute -left-28 top-1/4 h-80 w-80 rounded-full bg-accent opacity-[0.12] blur-3xl will-change-transform"
       />
       <div className="relative mx-auto max-w-6xl px-5 py-14 sm:px-6 sm:py-16">
         <Reveal>

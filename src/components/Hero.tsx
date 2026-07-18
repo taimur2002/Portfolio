@@ -46,11 +46,11 @@ export function Hero() {
       {/* Soft gradient orbs — the hero's color wash. */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
         <div
-          className="absolute animate-blob rounded-full bg-accent opacity-25 blur-3xl"
+          className="absolute animate-blob will-change-transform rounded-full bg-accent opacity-25 blur-3xl"
           style={{ width: 440, height: 440, top: -120, left: -80 }}
         />
         <div
-          className="absolute animate-blob rounded-full bg-accent-3 opacity-20 blur-3xl"
+          className="absolute animate-blob will-change-transform rounded-full bg-accent-3 opacity-20 blur-3xl"
           style={{
             width: 380,
             height: 380,
@@ -60,7 +60,7 @@ export function Hero() {
           }}
         />
         <div
-          className="absolute animate-blob rounded-full bg-accent-2 opacity-25 blur-3xl"
+          className="absolute animate-blob will-change-transform rounded-full bg-accent-2 opacity-25 blur-3xl"
           style={{
             width: 320,
             height: 320,

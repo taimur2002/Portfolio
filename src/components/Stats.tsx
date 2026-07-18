@@ -1,31 +1,36 @@
 "use client";
 
 import { animate, useInView } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { stats } from "@/data/portfolio";
 import { GradientText } from "@/components/GradientText";
 
 function CountUp({ to, suffix = "" }: { to: number; suffix?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
-  const [value, setValue] = useState(0);
 
+  // Drive the tween straight into the DOM node's text instead of React state.
+  // A per-frame setState would re-render this component ~84 times (1.4s * 60fps)
+  // for every stat, right as the user scrolls through this section — enough to
+  // drop frames on slower devices. Writing textContent keeps the identical
+  // count-up with zero re-renders.
   useEffect(() => {
     if (!inView) return;
+    const node = ref.current;
+    if (!node) return;
     const controls = animate(0, to, {
       duration: 1.4,
       ease: [0.22, 1, 0.36, 1],
-      onUpdate: (v) => setValue(v),
+      onUpdate: (v) => {
+        node.textContent = `${Math.round(v)}${suffix}`;
+      },
     });
     return () => controls.stop();
-  }, [inView, to]);
+  }, [inView, to, suffix]);
 
-  return (
-    <span ref={ref}>
-      {Math.round(value)}
-      {suffix}
-    </span>
-  );
+  // SSR / pre-animation state matches the tween's start value (0), so nothing
+  // pops when the animation takes over.
+  return <span ref={ref}>{`0${suffix}`}</span>;
 }
 
 export function Stats() {

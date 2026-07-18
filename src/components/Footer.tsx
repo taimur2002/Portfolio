@@ -16,7 +16,7 @@ export function Footer() {
       {/* subtle gradient glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-32 left-1/2 -z-10 h-72 w-160 -translate-x-1/2 rounded-full bg-accent opacity-20 blur-[100px]"
+        className="pointer-events-none absolute -top-32 left-1/2 -z-10 h-72 w-160 -translate-x-1/2 rounded-full bg-accent opacity-20 blur-[100px] will-change-transform"
       />
 
       {/* Interactive three.js constellation — glows on the dark backdrop, edge-

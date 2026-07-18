@@ -8,7 +8,7 @@ export function Skills() {
     <section id="skills" data-anchor-shift="40" className="relative overflow-hidden scroll-mt-16">
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-28 bottom-12 h-80 w-80 rounded-full bg-accent-3 opacity-[0.12] blur-3xl"
+        className="pointer-events-none absolute -right-28 bottom-12 h-80 w-80 rounded-full bg-accent-3 opacity-[0.12] blur-3xl will-change-transform"
       />
       <div className="relative mx-auto max-w-6xl px-5 py-14 sm:px-6 sm:py-16">
         <Reveal>
