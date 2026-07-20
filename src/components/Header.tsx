@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { profile } from "@/data/portfolio";
 
 const navLinks = [
@@ -23,6 +23,7 @@ export function Header() {
   });
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -38,6 +39,20 @@ export function Header() {
     mq.addEventListener("change", onChange);
     return () => mq.removeEventListener("change", onChange);
   }, []);
+
+  // Escape closes the menu and returns focus to the toggle, so keyboard users
+  // aren't stranded inside a collapsed panel.
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpen(false);
+        toggleRef.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [open]);
 
   const solid = scrolled || open;
 
@@ -95,9 +110,11 @@ export function Header() {
         {/* Mobile hamburger */}
         <button
           type="button"
+          ref={toggleRef}
           onClick={() => setOpen((o) => !o)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
+          aria-controls="mobile-menu"
           className="-mr-2 flex h-10 w-10 items-center justify-center sm:hidden"
         >
           <span className="flex flex-col items-center justify-center gap-1.5">
@@ -124,6 +141,7 @@ export function Header() {
       <AnimatePresence>
         {open && (
           <motion.nav
+            id="mobile-menu"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}

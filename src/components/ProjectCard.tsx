@@ -14,12 +14,13 @@ export function ProjectCard({
   project: Project;
   index: number;
 }) {
-  const reversed = index % 2 === 0;
+  // Alternate the image side down the page; odd-indexed rows mirror.
+  const imageOnRight = index % 2 === 0;
 
   return (
     <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-16">
       {project.image && (
-        <div className={`group relative ${reversed ? "lg:order-2" : ""}`}>
+        <div className={`group relative ${imageOnRight ? "lg:order-2" : ""}`}>
           <div className="relative aspect-2/1 overflow-hidden rounded-2xl border border-white/10 bg-surface shadow-sm transition-shadow duration-300 group-hover:shadow-xl group-hover:shadow-accent/10">
             <Image
               src={project.image}
@@ -32,14 +33,14 @@ export function ProjectCard({
         </div>
       )}
 
-      <div className={reversed ? "lg:order-1" : ""}>
+      <div className={imageOnRight ? "lg:order-1" : ""}>
         <div className="flex items-center gap-3">
           <span className="bg-linear-to-r from-accent via-accent-2 to-accent-3 bg-clip-text font-display text-sm font-bold tabular-nums text-transparent">
             {String(index + 1).padStart(2, "0")}
           </span>
           <span className="h-px w-8 bg-white/20" />
           {project.tag && (
-            <span className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
+            <span className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
               {project.tag}
             </span>
           )}
@@ -79,7 +80,7 @@ export function ProjectCard({
             </span>
           </a>
         ) : (
-          <span className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-zinc-500">
+          <span className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-zinc-400">
             <span className="h-1.5 w-1.5 rounded-full bg-zinc-600" />
             Internal tool
           </span>

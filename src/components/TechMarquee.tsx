@@ -39,7 +39,7 @@ export function TechMarquee() {
       aria-label="Tools and technologies"
       className="border-y border-white/10 bg-linear-to-r from-[#14100a] via-[#181109] to-[#120d07] py-12 sm:py-14"
     >
-      <p className="mb-8 text-center text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
+      <p className="mb-8 text-center text-xs font-semibold uppercase tracking-[0.2em] text-zinc-400">
         Tools &amp; tech I work with
       </p>
       <div className="relative flex flex-col gap-3 overflow-hidden py-2 mask-[linear-gradient(to_right,transparent,#000_8%,#000_92%,transparent)]">

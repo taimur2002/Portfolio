@@ -79,7 +79,7 @@ export function Footer() {
                   <p className="font-medium text-zinc-200">
                     {education[0].degree}
                   </p>
-                  <p className="text-xs text-zinc-500">
+                  <p className="text-xs text-zinc-400">
                     {education[0].school} · {education[0].period}
                   </p>
                 </div>

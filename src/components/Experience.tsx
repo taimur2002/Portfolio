@@ -35,7 +35,7 @@ export function Experience() {
                     <h3 className="mt-1 font-display text-lg font-semibold tracking-tight">
                       {item.role}
                     </h3>
-                    <p className="text-zinc-500">{item.company}</p>
+                    <p className="text-zinc-400">{item.company}</p>
                     <p className="mt-2 max-w-2xl text-zinc-400">
                       {item.description}
                     </p>
