@@ -13,10 +13,13 @@ export function Footer() {
       id="contact"
       className="relative isolate scroll-mt-16 overflow-hidden border-t border-white/10 bg-[#0a0603] text-white"
     >
-      {/* subtle gradient glow */}
+      {/* Subtle gradient glow. No `will-change` on purpose: it never animates,
+          and the hint would pin a ~1240x888 blurred texture (the 100px blur
+          expands the layer well past the box) on the GPU for the whole session,
+          on the one section that also runs the WebGL canvas below. */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-32 left-1/2 -z-10 h-72 w-160 -translate-x-1/2 rounded-full bg-accent opacity-20 blur-[100px] will-change-transform"
+        className="pointer-events-none absolute -top-32 left-1/2 -z-10 h-72 w-160 -translate-x-1/2 rounded-full bg-accent opacity-20 blur-[100px]"
       />
 
       {/* Interactive three.js constellation — glows on the dark backdrop, edge-

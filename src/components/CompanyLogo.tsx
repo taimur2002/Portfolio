@@ -27,6 +27,13 @@ export function CompanyLogo({
   const [failed, setFailed] = useState(false);
   const showImage = Boolean(logo) && !failed;
 
+  // next/image's optimizer rejects SVG unless `dangerouslyAllowSVG` is set, and
+  // a rejection here trips onError and silently swaps the mark for a monogram.
+  // SVGs are already small and resolution-independent, so pass those through
+  // and let the optimizer earn its keep on the raster marks (etl.png and
+  // itu.png ship 40KB and 19KB for a 30px tile).
+  const isSvg = logo?.toLowerCase().endsWith(".svg") ?? false;
+
   // Deliberately a white tile: most company marks are dark and would be
   // unreadable directly on the dark canvas.
   return (
@@ -37,7 +44,7 @@ export function CompanyLogo({
           alt={`${name} logo`}
           width={30}
           height={30}
-          unoptimized
+          unoptimized={isSvg}
           onError={() => setFailed(true)}
           className="h-8 w-8 object-contain"
         />

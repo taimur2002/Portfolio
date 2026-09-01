@@ -284,7 +284,21 @@ function init(THREE: ThreeModule, container: HTMLDivElement): () => void {
     pTarget.x = (e.clientX / vw) * 2 - 1;
     pTarget.y = (e.clientY / vh) * 2 - 1;
   };
-  window.addEventListener("pointermove", onPointerMove, { passive: true });
+  // Bound only while the loop actually runs. Attaching it at init meant a
+  // window-wide handler firing at the mouse's full polling rate (120Hz+ on
+  // gaming mice) for the entire session, feeding a parallax nobody can see
+  // because the footer is off-screen and the renderer is stopped.
+  let pointerBound = false;
+  function bindPointer() {
+    if (pointerBound) return;
+    window.addEventListener("pointermove", onPointerMove, { passive: true });
+    pointerBound = true;
+  }
+  function unbindPointer() {
+    if (!pointerBound) return;
+    window.removeEventListener("pointermove", onPointerMove);
+    pointerBound = false;
+  }
 
   function renderFrame() {
     pCurrent.x += (pTarget.x - pCurrent.x) * 0.04;
@@ -356,10 +370,12 @@ function init(THREE: ThreeModule, container: HTMLDivElement): () => void {
     lastEval = 0;
     emaDelta = frameInterval;
     warmedUp = false;
+    bindPointer();
     rafId = requestAnimationFrame(loop);
   }
   function stop() {
     running = false;
+    unbindPointer();
     if (rafId) cancelAnimationFrame(rafId);
     rafId = 0;
   }
@@ -420,7 +436,7 @@ function init(THREE: ThreeModule, container: HTMLDivElement): () => void {
     io.disconnect();
     ro.disconnect();
     document.removeEventListener("visibilitychange", onVisibility);
-    window.removeEventListener("pointermove", onPointerMove);
+    unbindPointer();
     canvas.removeEventListener(
       "webglcontextlost",
       onContextLost as EventListener,
@@ -449,22 +465,43 @@ export function FooterScene({ className }: { className?: string }) {
     let disposed = false;
     let teardown: (() => void) | undefined;
     let scheduleId: number | undefined;
+    let started = false;
 
-    import("three")
-      .then((THREE) => {
-        if (disposed) return;
-        const boot = () => {
-          if (!disposed) teardown = init(THREE, container);
-        };
-        const w = window as IdleWindow;
-        scheduleId = w.requestIdleCallback
-          ? w.requestIdleCallback(boot, { timeout: 800 })
-          : window.setTimeout(boot, 200);
-      })
-      .catch(() => {});
+    const load = () => {
+      if (started || disposed) return;
+      started = true;
+      import("three")
+        .then((THREE) => {
+          if (disposed) return;
+          const boot = () => {
+            if (!disposed) teardown = init(THREE, container);
+          };
+          const w = window as IdleWindow;
+          scheduleId = w.requestIdleCallback
+            ? w.requestIdleCallback(boot, { timeout: 800 })
+            : window.setTimeout(boot, 200);
+        })
+        .catch(() => {});
+    };
+
+    // Don't fetch ~700KB of WebGL on first render for a decoration five screens
+    // below the fold. The render loop was already gated on visibility; this puts
+    // the module fetch behind the same rule, measured at 505KB -> 326KB of JS on
+    // first load. `rootMargin` gives it room to download and compile before the
+    // footer arrives, so the constellation is up by the time anyone sees it.
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        io.disconnect();
+        load();
+      },
+      { rootMargin: "800px" },
+    );
+    io.observe(container);
 
     return () => {
       disposed = true;
+      io.disconnect();
       if (scheduleId !== undefined) {
         (window as IdleWindow).cancelIdleCallback?.(scheduleId);
         window.clearTimeout(scheduleId);

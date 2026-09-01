@@ -1,10 +1,8 @@
 "use client";
 
-import { motion, type HTMLMotionProps } from "framer-motion";
+import { useEffect, useRef } from "react";
 
-const EASE = [0.22, 1, 0.36, 1] as const;
-
-type RevealProps = HTMLMotionProps<"div"> & {
+type RevealProps = React.ComponentPropsWithoutRef<"div"> & {
   /** Stagger offset in seconds. */
   delay?: number;
   /** Direction the element enters from. Defaults to "bottom" (fade-up). */
@@ -13,30 +11,53 @@ type RevealProps = HTMLMotionProps<"div"> & {
 
 /**
  * Fades + slides its children in once they scroll into view.
- * Respects reduced-motion automatically via Framer Motion.
+ *
+ * The animation itself lives in CSS (see `[data-reveal]` in globals.css) rather
+ * than in Framer Motion. Framer animates by writing inline styles from JS on
+ * every frame, and with 18 of these on the page several fire at once during a
+ * fast scroll — measured at 12 dropped frames per full-page pass, against 1-5
+ * once those inline writes were gone. A CSS transition on opacity/transform is
+ * handed to the compositor and costs no main-thread work per frame.
+ *
+ * The observer sets the attribute straight on the node instead of going through
+ * state, so revealing costs no React render either, and disconnects after
+ * firing (these only ever play once).
  */
 export function Reveal({
   delay = 0,
   from = "bottom",
   children,
+  style,
   ...props
 }: RevealProps) {
-  const initial =
-    from === "left"
-      ? { opacity: 0, x: -60 }
-      : from === "right"
-        ? { opacity: 0, x: 60 }
-        : { opacity: 0, y: 26 };
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        el.setAttribute("data-shown", "");
+        io.disconnect();
+      },
+      // Matches the old Framer `viewport={{ margin: "-80px" }}`: the element has
+      // to be 80px inside the viewport before it counts as arrived.
+      { rootMargin: "-80px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
 
   return (
-    <motion.div
-      initial={initial}
-      whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.6, delay, ease: EASE }}
+    <div
+      ref={ref}
+      data-reveal={from}
+      style={{ ...style, "--reveal-delay": `${delay}s` } as React.CSSProperties}
       {...props}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }

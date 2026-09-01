@@ -114,12 +114,13 @@ export function SkillIcon({
   const image = IMAGE_ICONS[name];
   if (image) {
     return (
+      // Optimized, not `unoptimized`: these render into a 32px box, and the
+      // sources are a 47KB JPEG and a 12KB PNG at full size.
       <Image
         src={image}
         alt={`${name} logo`}
         width={32}
         height={32}
-        unoptimized
         className={`${className} rounded-md object-cover`}
       />
     );

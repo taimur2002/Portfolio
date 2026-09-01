@@ -1,4 +1,5 @@
 import { techStack } from "@/data/portfolio";
+import { OffscreenPause } from "@/components/motion/OffscreenPause";
 
 function Pill({ label }: { label: string }) {
   return (
@@ -42,10 +43,13 @@ export function TechMarquee() {
       <p className="mb-8 text-center text-xs font-semibold uppercase tracking-[0.2em] text-zinc-400">
         Tools &amp; tech I work with
       </p>
-      <div className="relative flex flex-col gap-3 overflow-hidden py-2 mask-[linear-gradient(to_right,transparent,#000_8%,#000_92%,transparent)]">
+      {/* Each track is two copies of a 25-item list, so it runs ~6500px wide.
+          OffscreenPause halts both once the section scrolls away; pausing keeps
+          the offset, so they resume without a seam. */}
+      <OffscreenPause className="relative flex flex-col gap-3 overflow-hidden py-2 mask-[linear-gradient(to_right,transparent,#000_8%,#000_92%,transparent)]">
         <Row items={techStack} />
         <Row items={rowB} reverse />
-      </div>
+      </OffscreenPause>
     </section>
   );
 }

@@ -6,6 +6,7 @@ import { profile, roles } from "@/data/portfolio";
 import { GradientText } from "@/components/GradientText";
 import { RotatingText } from "@/components/motion/RotatingText";
 import { Magnetic } from "@/components/motion/Magnetic";
+import { OffscreenPause } from "@/components/motion/OffscreenPause";
 
 const container: Variants = {
   hidden: {},
@@ -43,8 +44,21 @@ const headline: Variants = {
 export function Hero() {
   return (
     <section className="relative isolate overflow-hidden">
-      {/* Soft gradient orbs — the hero's color wash. */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+      {/* Soft gradient orbs — the hero's color wash.
+
+          Desktop only. Each is a real 64px convolution, and the cost scales
+          with device pixel ratio: at a phone's 3x DPR the same blur covers
+          roughly 9x the pixels it does on a 1x desktop. Measured on an emulated
+          mid-range Android these were the difference between a p95 frame of
+          100ms and 33ms. The mobile wash below paints the same three colours as
+          one flat gradient instead — no filter, no animation.
+
+          Wrapped in OffscreenPause so the 16s drift stops once the hero scrolls
+          away rather than compositing forever for a reader three sections down. */}
+      <OffscreenPause
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10 max-sm:hidden"
+      >
         <div
           className="absolute animate-blob will-change-transform rounded-full bg-accent opacity-25 blur-3xl"
           style={{ width: 440, height: 440, top: -120, left: -80 }}
@@ -69,7 +83,19 @@ export function Hero() {
             animationDelay: "-9s",
           }}
         />
-      </div>
+      </OffscreenPause>
+
+      {/* Mobile counterpart to the orbs above. */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10 sm:hidden"
+        style={{
+          backgroundImage:
+            "radial-gradient(60% 40% at 6% 4%, rgba(249,115,22,0.26), transparent 70%)," +
+            "radial-gradient(55% 34% at 96% 12%, rgba(239,68,68,0.20), transparent 70%)," +
+            "radial-gradient(52% 30% at 58% 94%, rgba(244,88,43,0.24), transparent 70%)",
+        }}
+      />
 
       {/* Dotted grid, faded toward the edges */}
       <div
@@ -94,7 +120,7 @@ export function Hero() {
         {/* "Available for new work" badge — hidden for now (currently employed).
             Uncomment this block to show it again.
         <motion.div variants={item}>
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-zinc-300 backdrop-blur">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-4 py-1.5 text-sm font-medium text-zinc-300 backdrop-blur-none sm:bg-white/5 sm:backdrop-blur">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
@@ -130,7 +156,7 @@ export function Hero() {
         </motion.p>
 
         <motion.div variants={item} className="mt-6">
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-sm text-zinc-400 backdrop-blur">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3.5 py-1.5 text-sm text-zinc-400 backdrop-blur-none sm:bg-white/5 sm:backdrop-blur">
             <Image
               src="/companies/convoi.svg"
               alt="Convoi AI"
@@ -159,7 +185,7 @@ export function Hero() {
           <Magnetic>
             <a
               href="#contact"
-              className="beam-border inline-flex items-center rounded-full border border-white/20 bg-white/5 px-7 py-3.5 text-sm font-medium text-zinc-100 backdrop-blur transition-all hover:-translate-y-0.5 hover:border-accent/30"
+              className="beam-border inline-flex items-center rounded-full border border-white/20 bg-white/10 px-7 py-3.5 text-sm font-medium text-zinc-100 backdrop-blur-none transition-all hover:-translate-y-0.5 hover:border-accent/30 sm:bg-white/5 sm:backdrop-blur"
             >
               Get in touch
             </a>

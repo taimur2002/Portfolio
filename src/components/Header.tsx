@@ -25,8 +25,17 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
 
+  // Scroll fires at a high rate; track the last value locally and only enter
+  // React's dispatch on an actual edge (React would bail out on the repeats
+  // anyway, but this skips the round trip entirely).
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    let last: boolean | null = null;
+    const onScroll = () => {
+      const next = window.scrollY > 12;
+      if (next === last) return;
+      last = next;
+      setScrolled(next);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -63,7 +72,7 @@ export function Header() {
       transition={{ duration: 0.6, ease: EASE }}
       className={`sticky top-0 z-50 transition-colors duration-300 ${
         solid
-          ? "border-b border-white/10 bg-canvas/80 backdrop-blur-md"
+          ? "border-b border-white/10 bg-canvas/95 backdrop-blur-none sm:bg-canvas/80 sm:backdrop-blur-md"
           : "border-b border-transparent bg-transparent"
       }`}
     >
@@ -146,7 +155,7 @@ export function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.28, ease: EASE }}
-            className="overflow-hidden border-b border-white/10 bg-canvas/95 backdrop-blur-md sm:hidden"
+            className="overflow-hidden border-b border-white/10 bg-canvas sm:hidden"
           >
             <div className="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-3">
               {navLinks.map((link) => (
