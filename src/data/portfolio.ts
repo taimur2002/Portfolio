@@ -65,7 +65,7 @@ export const profile = {
   tagline: "I build reliable software, from idea to production.",
   /** A short paragraph or two for the About section. */
   about: [
-    "I'm a Full-Stack Software Engineer at Convoi AI, where I build voice AI agents that hold real conversations. My work spans the full pipeline: training and tuning LLM-based conversational agents, integrating Speech-to-Text and Text-to-Speech systems, and building real-time voice infrastructure with LiveKit.",
+    "I’m a Full-Stack AI Engineer at Convoi AI, where I build voice AI agents that hold real conversations. My work spans the full pipeline: training and tuning LLM-based conversational agents, integrating Speech-to-Text and Text-to-Speech systems, and building real-time voice infrastructure with LiveKit.",
     "On the product side I build backend services with Python and FastAPI and frontends with Next.js, working directly with clients to turn their requirements into production-ready deployments. I care about what actually makes voice AI work in production: low latency, grounding so the agent never invents a price or fact, natural dialect handling, and tool calling that holds up in front of real customers.",
     "Right now I'm exploring multi-agent orchestration, evaluation frameworks for voice AI, and techniques for building more reliable, scalable conversational systems.",
   ],
@@ -87,7 +87,7 @@ export const profile = {
 
 /** Roles that cycle in the hero eyebrow (animated flip). */
 export const roles: string[] = [
-  "Full-Stack Engineer",
+  "Full-Stack AI Engineer | Voice AI",
   "Voice AI Engineer",
   "Next.js Developer",
   "Python Developer",
