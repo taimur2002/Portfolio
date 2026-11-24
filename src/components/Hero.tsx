@@ -158,15 +158,15 @@ export function Hero() {
         <motion.div variants={item} className="mt-6">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3.5 py-1.5 text-sm text-zinc-400 backdrop-blur-none sm:bg-white/5 sm:backdrop-blur">
             <Image
-              src="/companies/convoi.svg"
-              alt="Convoi AI"
+              src="/companies/rtc_league.jpeg"
+              alt="RTC League"
               width={14}
               height={20}
               unoptimized
               className="h-4 w-auto"
             />
             Currently at{" "}
-            <span className="font-semibold text-zinc-100">Convoi AI</span>
+            <span className="font-semibold text-zinc-100">RTC League</span>
           </span>
         </motion.div>
 

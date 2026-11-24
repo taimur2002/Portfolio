@@ -198,11 +198,19 @@ export const stats: Stat[] = [
  * Copy a block to add another role.
  */
 export const experience: ExperienceItem[] = [
-  {
+    {
     role: "Software Engineer",
+    company: "RTC League",
+    logo: "/companies/rtc_league.jpeg",
+    period: "Dec 2026 to Present",
+    description:
+    ""
+  },
+  {
+    role: "Associate Software Engineer",
     company: "Convoi AI",
     logo: "/companies/convoi.svg",
-    period: "Aug 2025 to Present",
+    period: "July 2025 to Nov 2026",
     description:
       "Building full-stack voice AI systems with Next.js frontends and Python/FastAPI backends. I develop LLM-based conversational agents with real-time Speech-to-Text and Text-to-Speech pipelines, and live voice infrastructure on LiveKit for streaming, turn-taking, and orchestration. Shipped a production voice agent for Invygo, a UAE car rental platform, with multilingual Arabic and English booking and payment flows, and built agents for enterprise clients across KSA, UAE, and Germany, including Pepsi (Aquafina) and Dubai healthcare providers.",
   },
@@ -210,7 +218,7 @@ export const experience: ExperienceItem[] = [
     role: "Software Engineer Intern",
     company: "ETL Online",
     logo: "/companies/etl.png",
-    period: "Apr 2025 to Jun 2025",
+    period: "Jan 2025 to Jun 2025",
     description:
       "Built and maintained Next.js frontend pages for ETL Online's community platform, Pakistan's largest non-profit tech community, and developed Node.js and Express REST APIs powering its features. Contributed to a live product used by 2,300+ members across Pakistan.",
   },
