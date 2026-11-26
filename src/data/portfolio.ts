@@ -215,7 +215,7 @@ export const experience: ExperienceItem[] = [
       "Building full-stack voice AI systems with Next.js frontends and Python/FastAPI backends. I develop LLM-based conversational agents with real-time Speech-to-Text and Text-to-Speech pipelines, and live voice infrastructure on LiveKit for streaming, turn-taking, and orchestration. Shipped a production voice agent for Invygo, a UAE car rental platform, with multilingual Arabic and English booking and payment flows, and built agents for enterprise clients across KSA, UAE, and Germany, including Pepsi (Aquafina) and Dubai healthcare providers.",
   },
   {
-    role: "Software Engineer Intern",
+    role: "Junior Software Engineer",
     company: "ETL Online",
     logo: "/companies/etl.png",
     period: "Jan 2025 to Jun 2025",
